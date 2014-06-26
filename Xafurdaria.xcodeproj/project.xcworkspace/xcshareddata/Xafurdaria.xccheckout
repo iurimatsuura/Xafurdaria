@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>2EC348EF-4467-4C0F-AB73-163AF2D611D8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Xafurdaria</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>59E33A09-2E55-47EA-8C49-4174642F387B</key>
+		<string>https://bitbucket.org/iurism/xafurdaria.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Xafurdaria.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>59E33A09-2E55-47EA-8C49-4174642F387B</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://bitbucket.org/iurism/xafurdaria.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>59E33A09-2E55-47EA-8C49-4174642F387B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>59E33A09-2E55-47EA-8C49-4174642F387B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Xafurdaria</string>
+		</dict>
+	</array>
+</dict>
+</plist>
