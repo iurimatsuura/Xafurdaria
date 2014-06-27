@@ -25,9 +25,9 @@
     
     player.delegate = self;
     [player setVolume: 1.0];    // available range is 0.0 through 1.0
-    [player play];
+//    [player play];
     
-    sleep([self getAudioDuration]+1);
+//    sleep([self getAudioDuration]+1);
 
 
     // IMPORTAAAAAAANT!!
