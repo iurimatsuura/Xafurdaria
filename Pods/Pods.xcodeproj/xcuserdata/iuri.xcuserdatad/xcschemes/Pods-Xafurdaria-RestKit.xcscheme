@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EBBAF6F95E9E40D0B69DBDB1"
+               BlueprintIdentifier = "232BAD76D3AB4D3199C44FDC"
                BuildableName = "libPods-Xafurdaria-RestKit.a"
                BlueprintName = "Pods-Xafurdaria-RestKit"
                ReferencedContainer = "container:Pods.xcodeproj">

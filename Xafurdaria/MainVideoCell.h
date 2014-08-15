@@ -16,6 +16,8 @@
 @property (nonatomic) IBOutlet UILabel *videoViews;
 @property (nonatomic) IBOutlet UIWebView *webView;
 @property (nonatomic) IBOutlet UIView *containerInfoView;
+@property (nonatomic) IBOutlet UIImageView *timeImageView;
+@property (nonatomic) IBOutlet UIImageView *viewsImageView;
 
 - (void)playVideoWithId:(NSString *)videoId;
 

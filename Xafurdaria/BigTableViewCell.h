@@ -1,0 +1,24 @@
+//
+//  BigTableViewCell.h
+//  Xafurdaria
+//
+//  Created by Iuri Matsuura on 15/08/14.
+//  Copyright (c) 2014 Iuri Mac. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface BigTableViewCell : UITableViewCell
+
+@property (nonatomic) IBOutlet UIImageView *videoImage;
+@property (nonatomic) IBOutlet UILabel *videoName;
+@property (nonatomic) IBOutlet UILabel *videoDuration;
+@property (nonatomic) IBOutlet UILabel *videoViews;
+@property (nonatomic) IBOutlet UIWebView *webView;
+@property (nonatomic) IBOutlet UIView *containerInfoView;
+@property (nonatomic) IBOutlet UIImageView *timeImageView;
+@property (nonatomic) IBOutlet UIImageView *viewsImageView;
+@property (nonatomic) IBOutlet UILabel *dateLabel;
+@property (nonatomic) IBOutlet UIImageView *dateImageView;
+
+@end

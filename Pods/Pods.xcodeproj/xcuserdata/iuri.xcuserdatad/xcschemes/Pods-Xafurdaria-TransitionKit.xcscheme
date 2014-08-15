@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8A67602D6B6B4706A4D5D558"
+               BlueprintIdentifier = "B2DAE3E3DD8D43ECA0EDE601"
                BuildableName = "libPods-Xafurdaria-TransitionKit.a"
                BlueprintName = "Pods-Xafurdaria-TransitionKit"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -15,25 +15,36 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
-        self.videoName = [[UILabel alloc]initWithFrame:CGRectMake(0, 1, 160, 56)];
-        self.videoName.font = [UIFont fontWithName:@"Komika Axis" size:8.0];
+        self.videoName = [[UILabel alloc]initWithFrame:CGRectMake(5, 0, 150, 56)];
+        self.videoName.font = [UIFont fontWithName:@"Komika Axis" size:12.0];
+        self.videoName.numberOfLines = 3;
+        self.videoName.lineBreakMode = NSLineBreakByTruncatingTail;
         self.videoName.textAlignment = NSTextAlignmentCenter;
         
         self.videoImage = [UIImageView new];
-        self.videoImage.frame = CGRectMake(0, 0, 160, 95);
+        self.videoImage.frame = CGRectMake(0, 0, 160, 90);
         
-        self.videoDuration = [[UILabel alloc]initWithFrame:CGRectMake(20, 63, 142, 21)];
+        self.videoDuration = [[UILabel alloc]initWithFrame:CGRectMake(20, 60, 142, 21)];
+        self.videoDuration.font = [UIFont systemFontOfSize:12];
         
-        self.videoViews = [[UILabel alloc]initWithFrame:CGRectMake(173, 68, 142, 21)];
+        self.videoViews = [[UILabel alloc]initWithFrame:CGRectMake(93, 63, 65, 15)];
+        self.videoViews.font = [UIFont systemFontOfSize:12];
         
         self.webView = [[UIWebView alloc]initWithFrame:CGRectMake(80, 45, 0, 0)];
         self.webView.mediaPlaybackRequiresUserAction = NO;
         
-        self.containerInfoView = [[UIView alloc]initWithFrame:CGRectMake(160, 10, 160, 80)];
+        self.timeImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"clock"]];
+        self.timeImageView.frame = CGRectMake(6, 65, 13, 12);
+        self.viewsImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"eye"]];
+        self.viewsImageView.frame = CGRectMake(74, 65, 13, 12);
+        
+        self.containerInfoView = [[UIView alloc]initWithFrame:CGRectMake(160, 0, 160, 80)];
         [self.containerInfoView setBackgroundColor:[UIColor whiteColor]];
         [self.containerInfoView addSubview:self.videoName];
         [self.containerInfoView addSubview:self.videoDuration];
         [self.containerInfoView addSubview:self.videoViews];
+        [self.containerInfoView addSubview:self.timeImageView];
+        [self.containerInfoView addSubview:self.viewsImageView];
         
         [self.contentView setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
         

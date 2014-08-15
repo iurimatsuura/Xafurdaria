@@ -12,6 +12,7 @@
 #import "Statistics.h"
 #import "Thumbnail.h"
 #import "ImageMedium.h"
+#import "ImageHigh.h"
 
 @implementation Video
 //
@@ -43,20 +44,28 @@
                                                                                  toKeyPath:@"medium"
                                                                                withMapping:imageMapping]];
     
+    RKObjectMapping* highImageMapping = [RKObjectMapping mappingForClass:[ImageHigh class] ];
+    [highImageMapping addAttributeMappingsFromArray:@[ @"url"]];
+    
+    
+    [thumbMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"maxres"
+                                                                                 toKeyPath:@"high"
+                                                                               withMapping:highImageMapping]];
+    
     [snippetMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"thumbnails"
-                                                                                 toKeyPath:@"thumbnails"
-                                                                               withMapping:thumbMapping]];
+                                                                                   toKeyPath:@"thumbnails"
+                                                                                 withMapping:thumbMapping]];
     
     // Now configure the Article mapping
     RKObjectMapping* videoMapping = [RKObjectMapping mappingForClass:[Video class]];
     [videoMapping addAttributeMappingsFromDictionary:@{
-     @"id": @"videoId"
-    }];
+                                                       @"id": @"videoId"
+                                                       }];
     
     // Define the relationship mapping
     [videoMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"snippet"
-                                                                                   toKeyPath:@"snippet"
-                                                                                 withMapping:snippetMapping]];
+                                                                                 toKeyPath:@"snippet"
+                                                                               withMapping:snippetMapping]];
     
     [videoMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"contentDetails"
                                                                                  toKeyPath:@"contentDetails"

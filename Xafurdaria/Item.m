@@ -16,7 +16,6 @@
     // NOTE: When your source and destination key paths are symmetrical, you can use addAttributesFromArray: as a shortcut instead of addAttributesFromDictionary:
     [contentMapping addAttributeMappingsFromArray:@[ @"videoId"]];
     
-    // Now configure the Article mapping
     RKObjectMapping* itemMapping = [RKObjectMapping mappingForClass:[Item class] ];
     [itemMapping addAttributeMappingsFromDictionary:@{
      

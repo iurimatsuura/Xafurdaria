@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Xafurdaria-MFSideMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Xafurdaria-ODRefreshControl.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -44,6 +49,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Xafurdaria-XCDYouTubeKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Xafurdaria.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,47 +62,57 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>139F058D09254EC7BFB9A716</key>
+		<key>1F69BBC66BE142C1BBE04F83</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2C6210F836A245D0A66D1ACB</key>
+		<key>1FD9D6A8C2604B0A80D9DC6F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>454B82A8CF7E4F2492678C8B</key>
+		<key>232BAD76D3AB4D3199C44FDC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>45CDFC5358684CFAB574AC17</key>
+		<key>2B42965D01FF4E66B0C213D7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>49AB1D9C493E4E7B94AF4824</key>
+		<key>52A62AF8DB614B1499F7017B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8A67602D6B6B4706A4D5D558</key>
+		<key>7CFBB5642BAE469391D94983</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9B83D5A6D254413D821DCD32</key>
+		<key>ABC3DBE5F292433996BC4AD6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DA8351063B2442C3AC34AF33</key>
+		<key>B2DAE3E3DD8D43ECA0EDE601</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EBBAF6F95E9E40D0B69DBDB1</key>
+		<key>CAE930E279804590AFF450EC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E22EA27B2F5141D08587044E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E3E800E4F57A48F59212FC5A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

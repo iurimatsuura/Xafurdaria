@@ -13,6 +13,8 @@
 #import "Video.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "MainVideoCell.h"
+#import "Parent.h"
+#import <XCDYouTubeKit/XCDYouTubeKit.h>
 
 @interface MainVideoViewController ()
 
@@ -31,20 +33,36 @@
     self.videosIDs = [NSMutableArray new];
     self.videos = [NSMutableArray new];
     
-    [self makeRequest];
+    _nextPageToken = @"";
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(youTubeStarted:) name:@"UIMoviePlayerControllerDidEnterFullscreenNotification" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(youTubeFinished:) name:@"UIMoviePlayerControllerDidExitFullscreenNotification" object:nil];
+    [self makeRequest];
     
     _firstTime = YES;
     _imageCount = 0;
     
     _refreshControl = [[ODRefreshControl alloc]initInScrollView:self.tableView];
-    [_refreshControl setTintColor:[UIColor colorWithRed:0.89 green:0.109 blue:0.105 alpha:1.0]];
-    [_refreshControl addTarget:self action:@selector(makeRequest) forControlEvents:UIControlEventValueChanged];
+    [_refreshControl setTintColor:[UIColor colorWithRed:0.99 green:0.75 blue:0.03 alpha:1.0]];
+    [_refreshControl addTarget:self action:@selector(refreshControlRequest) forControlEvents:UIControlEventValueChanged];
     
     [self.tableView registerClass:[MainVideoCell class] forCellReuseIdentifier:@"MainVideoCell"];
     
+    [self showActivityIndicator];
+    
+    self.hudUtility = [[HudUtility alloc]init];
+    [self.hudUtility setHUDPropertiesWithView:self.tableView];
+}
+
+-(void)showActivityIndicator
+{
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [spinner startAnimating];
+    spinner.frame = CGRectMake(0, 0, 320, 44);
+    self.tableView.tableFooterView = spinner;
+}
+
+-(void)dismissActivityIndicator
+{
+    self.tableView.tableFooterView = nil;
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,68 +72,71 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    
-    if (_firstTime) {
-        //        self.tableLayer = [CAGradientLayer layer];
-        //        self.tableLayer.frame = self.tableView.bounds;
-        //        self.tableLayer.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:0.32 green:0.32 blue:0.34 alpha:1.0]CGColor], (id)[[UIColor whiteColor]CGColor], nil];
-        //        self.tableLayer.locations = @[@0.2, @1.0];
-        //
-        //        UIView* view = [UIView new];
-        //        [view.layer insertSublayer:self.tableLayer atIndex:1];
-        //
-        //        [self.tableView setBackgroundView:view];
-        //
-        //        _firstTime = NO;
-    }
-    
-    
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
 
-//-(BOOL) shouldAutorotate {
-//    return NO;
-//}
-//-(NSUInteger)supportedInterfaceOrientations{
-//    return UIInterfaceOrientationMaskPortrait;
-//}
-//- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
-//    return UIInterfaceOrientationPortrait;
-//}
-
--(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
-    self.tableLayer.frame = self.tableView.frame;
-    
 }
 
--(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
-    self.tableLayer.frame = self.tableView.frame;
-    
+-(BOOL)shouldAutorotate {
+    return NO;
 }
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (void)canRotate { }
+
 
 #pragma mark REQUEST - Methods
 
+-(void)refreshControlRequest
+{
+    _nextPageToken = @"";
+    _imageCount = 0;
+    
+    self.videosIDs = nil;
+    self.videos = nil;
+    
+    self.videos = [NSMutableArray new];
+    self.videosIDs = [NSMutableArray new];
+    
+    [self.tableView reloadData];
+    
+    [self makeRequest];
+}
+
 -(void)makeRequest{
     
-    [self.videos removeAllObjects];
-    [self.videosIDs removeAllObjects];
+    [self showActivityIndicator];
     
-    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:[Item mapping] method:RKRequestMethodGET pathPattern:nil keyPath:@"items" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:[Parent mapping] method:RKRequestMethodGET pathPattern:nil keyPath:@"" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
-    NSURL *url2 = [NSURL URLWithString:@"https://www.googleapis.com/youtube/v3/playlistItems?part=id%2C+snippet%2C+contentDetails&maxResults=30&playlistId=UU21wUP_bie85msUyT3eJnew&key=AIzaSyA7-TdCyHBVFoGvp2oixemxDX72a_C0Xcs"];
+    NSURL *url2 = [NSURL URLWithString:[NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/playlistItems?part=id,snippet,contentDetails&maxResults=10&pageToken=%@&playlistId=UU21wUP_bie85msUyT3eJnew&key=AIzaSyA7-TdCyHBVFoGvp2oixemxDX72a_C0Xcs",_nextPageToken]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url2];
     RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ responseDescriptor ]];
     [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         RKLogInfo(@"Load collection of Items: %@", mappingResult.array);
         
-        self.videosIDs = [NSMutableArray arrayWithArray:mappingResult.array];
+        Parent* rootJson = [mappingResult.array objectAtIndex:0];
         
-        for (Item* itemAux in self.videosIDs) {
+        _nextPageToken = rootJson.nextPageToken;
+        
+        self.videosIDs = [NSMutableArray arrayWithArray:[self.videosIDs arrayByAddingObjectsFromArray:rootJson.items]];
+        
+        for (Item* itemAux in rootJson.items) {
             [self makeRequestWithVideoId:itemAux.contentDetails.videoId andPosition:[self.videosIDs indexOfObject:itemAux]];
         }
         
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         RKLogError(@"Operation failed with error: %@", error);
+        
+        if (_nextPageToken != nil) {
+        
+            [self.hudUtility showCustomHudWithMessage:@"Falha" andDetailsMessage:@"Verifique sua conexão"];
+        }
+        [self dismissActivityIndicator];
         [_refreshControl endRefreshing];
     }];
     
@@ -134,29 +155,22 @@
         RKLogInfo(@"Load collection of Items: %@", mappingResult.array);
         
         
-        
         if (mappingResult.array.count != 0) {
             Video* video = mappingResult.array[0];
             [self.videos addObject:video];
             
             if (self.videos.count == self.videosIDs.count) {
                 [self sortVideosArray];
+                [self.tableView reloadData];
                 [_refreshControl endRefreshing];
             }
-            
-            //            [self getImageWithUrl:video.snippet.thumbnails.medium.url ForVideoAtIndex:[self.videos indexOfObject:video]];
         }
-        
-        
-        [self.tableView reloadData];
         
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         RKLogError(@"Operation failed with error: %@", error);
     }];
     
     [objectRequestOperation start];
-    
-    
 }
 
 -(void)getImageWithUrl:(NSString*)urlImage ForVideoAtIndex:(NSInteger)position{
@@ -192,9 +206,8 @@
 }
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-    //    cell.contentView.backgroundColor = [UIColor colorWithRed:0.98 green:0.76 blue:0.78 alpha:1.0];
-    //    cell.contentView.backgroundColor = [UIColor colorWithRed:0.32 green:0.32 blue:0.34 alpha:1.0];
-    
+    if (indexPath.row == [self.videos count] - 1)
+        [self makeRequest];
     
 }
 
@@ -203,14 +216,19 @@
     static NSString *CellIdentifier = @"MainVideoCell";
     MainVideoCell *cell = (MainVideoCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    Video* video = [self.videos objectAtIndex:indexPath.row];
-    cell.videoName.text = video.snippet.title;
-    cell.videoDuration.text = [video.contentDetails correctDuration];
-    cell.videoViews.text = [self formatNumber:video.statistics.viewCount];
-    [cell.videoImage setImageWithURL:[NSURL URLWithString:video.snippet.thumbnails.medium.url] placeholderImage:nil];
-    cell.webView.delegate = self;
+    if (self.videos.count != 0) {
+        
+        
+        Video* video = [self.videos objectAtIndex:indexPath.row];
+        cell.videoName.text = video.snippet.title;
+        cell.videoDuration.text = [video.contentDetails correctDuration];
+        cell.videoViews.text = [self formatNumber:video.statistics.viewCount];
+        [cell.videoImage setImageWithURL:[NSURL URLWithString:video.snippet.thumbnails.medium.url] placeholderImage:nil];
+        cell.webView.delegate = self;
+        
+        [cell.contentView bringSubviewToFront:cell.videoImage];
+    }
     
-    [cell.contentView bringSubviewToFront:cell.videoImage];
     return cell;
 }
 
@@ -221,27 +239,13 @@
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    MainVideoCell* cell = (MainVideoCell*)[tableView cellForRowAtIndexPath:indexPath];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     Video* video = [self.videos objectAtIndex:indexPath.row];
     
-    NSLog(@"%@",video.videoId);
-    [cell playVideoWithId:video.videoId];
+    [self showVideoWithId:video.videoId];
 }
-
-#pragma mark YOUTUBE PLAYER - methods
-
--(void)youTubeStarted:(NSNotification *)notification{
-    
-}
-
--(void)youTubeFinished:(NSNotification *)notification{
-    
-    //    self.tableLayer.frame = self.tableView.frame;
-}
-
 
 #pragma mark HELPER - methods
 
@@ -260,13 +264,18 @@
     [self.tableView reloadData];
 }
 
+-(void)showVideoWithId:(NSString*)videoId
+{
+    XCDYouTubeVideoPlayerViewController *videoPlayerViewController = [[XCDYouTubeVideoPlayerViewController alloc] initWithVideoIdentifier:videoId];
+    [self presentMoviePlayerViewControllerAnimated:videoPlayerViewController];
+}
+
 -(NSString*)formatNumber:(NSNumber*)number{
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     
     [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
     
     NSString *formattedNumberString = [numberFormatter stringFromNumber:number];
-    NSLog(@"%@",formattedNumberString);
     
     return formattedNumberString;
 }

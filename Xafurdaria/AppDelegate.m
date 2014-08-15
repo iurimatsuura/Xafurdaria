@@ -9,32 +9,48 @@
 #import "AppDelegate.h"
 #import <AVFoundation/AVAudioPlayer.h>
 #import <CoreFoundation/CoreFoundation.h>
+#import "MyNavigationViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    
-    
     [self setCustomComponentProperties];
-    
-    NSString *soundFilePath = [[NSBundle mainBundle] pathForResource: @"Vinheta" ofType: @"mp3"];
-    NSURL *fileURL = [[NSURL alloc] initFileURLWithPath: soundFilePath];
-    AVAudioPlayer* player = [[AVAudioPlayer alloc] initWithContentsOfURL: fileURL error: nil];
-    
-    player.delegate = self;
-    [player setVolume: 1.0];    // available range is 0.0 through 1.0
-//    [player play];
-    
-//    sleep([self getAudioDuration]+1);
 
-
-    // IMPORTAAAAAAANT!!
-    // GET ALL XAFURDARIA VIDEOS URL
-    //NSURL *url = [NSURL URLWithString:@"https://www.googleapis.com/youtube/v3/playlistItems?part=id%2C+snippet%2C+contentDetails&maxResults=30&playlistId=UU21wUP_bie85msUyT3eJnew&key=AIzaSyA7-TdCyHBVFoGvp2oixemxDX72a_C0Xcs"];
-    // Channel id = UC21wUP_bie85msUyT3eJnew
     return YES;
+}
+
+- (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+    // Get topmost/visible view controller
+    UIViewController *currentViewController = [self topViewController];
+    
+    // Check whether it implements a dummy methods called canRotate
+    if ([currentViewController respondsToSelector:@selector(canRotate)]) {
+        // Unlock landscape view orientations for this view controller
+        return UIInterfaceOrientationPortrait | UIInterfaceOrientationPortraitUpsideDown;
+    }
+    
+    // Only allow portrait (standard behaviour)
+    return UIInterfaceOrientationMaskAll;
+}
+
+- (UIViewController*)topViewController {
+    return [self topViewControllerWithRootViewController:[UIApplication sharedApplication].keyWindow.rootViewController];
+}
+
+- (UIViewController*)topViewControllerWithRootViewController:(UIViewController*)rootViewController {
+    if ([rootViewController isKindOfClass:[UITabBarController class]]) {
+        UITabBarController* tabBarController = (UITabBarController*)rootViewController;
+        return [self topViewControllerWithRootViewController:tabBarController.selectedViewController];
+    } else if ([rootViewController isKindOfClass:[UINavigationController class]]) {
+        UINavigationController* navigationController = (UINavigationController*)rootViewController;
+        return [self topViewControllerWithRootViewController:navigationController.visibleViewController];
+    } else if (rootViewController.presentedViewController) {
+        UIViewController* presentedViewController = rootViewController.presentedViewController;
+        return [self topViewControllerWithRootViewController:presentedViewController];
+    } else {
+        return rootViewController;
+    }
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -65,41 +81,17 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
--(void)setCustomComponentProperties{
-    
-    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-    [[UINavigationBar appearance] setBackgroundColor:[UIColor colorWithRed:0.99 green:0.75 blue:0.03 alpha:1.0]];
+-(void)setCustomComponentProperties
+{
+    [[UINavigationBar appearance] setBackgroundColor:[UIColor colorWithRed:1.000 green:0.651 blue:0.000 alpha:1.000]];
     
     [[UINavigationBar appearance] setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:
-      [UIColor blackColor],
+      [UIColor whiteColor],
       NSForegroundColorAttributeName,
-      [UIFont fontWithName:@"Komika Axis" size:18.0],
+      [UIFont fontWithName:@"Komika Axis" size:20.0],
       NSFontAttributeName,
       nil]];
-    
-    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:0.99 green:0.75 blue:0.03 alpha:1.0]];
-    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                       [UIColor blackColor],
-                                                       NSForegroundColorAttributeName,
-                                                       nil] forState:UIControlStateNormal];
-    
-    [[UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:0.99 green:0.75 blue:0.03 alpha:1.0]];
-    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor blackColor], NSForegroundColorAttributeName,[UIFont fontWithName:@"Komika Axis" size:10.0],NSFontAttributeName,nil]forState:UIControlStateNormal];
-    
-    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor blackColor], NSForegroundColorAttributeName,[UIFont fontWithName:@"Komika Axis" size:8.0],NSFontAttributeName ,nil] forState:UIControlStateNormal];
-
-}
-
-
--(float)getAudioDuration{
-    
-    NSString *soundFilePath = [[NSBundle mainBundle] pathForResource: @"Vinheta" ofType: @"mp3"];
-    NSURL *fileURL = [[NSURL alloc] initFileURLWithPath: soundFilePath];
-    AVURLAsset* audioAsset = [AVURLAsset URLAssetWithURL:fileURL options:nil];
-    CMTime audioDuration = audioAsset.duration;
-    float audioDurationSeconds = CMTimeGetSeconds(audioDuration);
-    return audioDurationSeconds;
 }
 
 @end

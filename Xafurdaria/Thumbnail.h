@@ -9,8 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "ImageMedium.h"
 #import <RestKit/RestKit.h>
+#import "ImageHigh.h"
+
 @interface Thumbnail : NSObject
 
 @property (nonatomic, strong) ImageMedium* medium;
+@property (nonatomic, strong) ImageHigh* high;
 
 @end
