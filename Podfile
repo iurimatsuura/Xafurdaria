@@ -10,6 +10,7 @@ pod 'RestKit'
 pod 'ODRefreshControl', '~> 1.1.0'
 pod 'SDWebImage'
 pod 'XCDYouTubeKit'
+pod "Appirater"
 
 end
 

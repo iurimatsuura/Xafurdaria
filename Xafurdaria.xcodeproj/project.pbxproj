@@ -46,6 +46,26 @@
 		CA64BE65195CA5400030A555 /* eye.png in Resources */ = {isa = PBXBuildFile; fileRef = CA64BE63195CA5400030A555 /* eye.png */; };
 		CA64BE66195CA5400030A555 /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = CA64BE64195CA5400030A555 /* clock.png */; };
 		CA6A3857199EBD4700D176E6 /* LeftSideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6A3856199EBD4700D176E6 /* LeftSideViewController.m */; };
+		CA70E647199EC0DB00FE980D /* SocialCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA70E646199EC0DB00FE980D /* SocialCell.m */; };
+		CA70E64A199EC22F00FE980D /* people.png in Resources */ = {isa = PBXBuildFile; fileRef = CA70E648199EC22F00FE980D /* people.png */; };
+		CA70E64B199EC22F00FE980D /* people@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA70E649199EC22F00FE980D /* people@2x.png */; };
+		CA70E64D199EC49900FE980D /* members.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA70E64C199EC49900FE980D /* members.plist */; };
+		CA70E650199ED06E00FE980D /* enderson.png in Resources */ = {isa = PBXBuildFile; fileRef = CA70E64E199ED06E00FE980D /* enderson.png */; };
+		CA70E651199ED06E00FE980D /* enderson@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA70E64F199ED06E00FE980D /* enderson@2x.png */; };
+		CA70E654199ED0D500FE980D /* leonan.png in Resources */ = {isa = PBXBuildFile; fileRef = CA70E652199ED0D500FE980D /* leonan.png */; };
+		CA70E655199ED0D500FE980D /* leonan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA70E653199ED0D500FE980D /* leonan@2x.png */; };
+		CA70E660199ED2DC00FE980D /* kaio.png in Resources */ = {isa = PBXBuildFile; fileRef = CA70E65E199ED2DC00FE980D /* kaio.png */; };
+		CA70E661199ED2DC00FE980D /* kaio@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA70E65F199ED2DC00FE980D /* kaio@2x.png */; };
+		CA70E668199ED73000FE980D /* twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA70E662199ED73000FE980D /* twitter@2x.png */; };
+		CA70E669199ED73000FE980D /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = CA70E663199ED73000FE980D /* twitter.png */; };
+		CA70E66A199ED73000FE980D /* face@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA70E664199ED73000FE980D /* face@2x.png */; };
+		CA70E66B199ED73000FE980D /* face.png in Resources */ = {isa = PBXBuildFile; fileRef = CA70E665199ED73000FE980D /* face.png */; };
+		CA70E66C199ED73000FE980D /* insta@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA70E666199ED73000FE980D /* insta@2x.png */; };
+		CA70E66D199ED73000FE980D /* insta.png in Resources */ = {isa = PBXBuildFile; fileRef = CA70E667199ED73000FE980D /* insta.png */; };
+		CA70E674199ED95700FE980D /* moa.png in Resources */ = {isa = PBXBuildFile; fileRef = CA70E672199ED95700FE980D /* moa.png */; };
+		CA70E675199ED95700FE980D /* moa@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA70E673199ED95700FE980D /* moa@2x.png */; };
+		CA70E678199EDA0000FE980D /* saulo.png in Resources */ = {isa = PBXBuildFile; fileRef = CA70E676199EDA0000FE980D /* saulo.png */; };
+		CA70E679199EDA0000FE980D /* saulo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA70E677199EDA0000FE980D /* saulo@2x.png */; };
 		CAB56D4C195E39380061CDB1 /* Parent.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB56D4B195E39380061CDB1 /* Parent.m */; };
 		CAC95C03199EA4F0007A5EDE /* BigTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC95C02199EA4F0007A5EDE /* BigTableViewCell.m */; };
 		CAC95C05199EB79C007A5EDE /* Xafurdaria1136.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC95C04199EB79C007A5EDE /* Xafurdaria1136.png */; };
@@ -118,6 +138,27 @@
 		CA64BE64195CA5400030A555 /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
 		CA6A3855199EBD4700D176E6 /* LeftSideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftSideViewController.h; sourceTree = "<group>"; };
 		CA6A3856199EBD4700D176E6 /* LeftSideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftSideViewController.m; sourceTree = "<group>"; };
+		CA70E645199EC0DB00FE980D /* SocialCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialCell.h; sourceTree = "<group>"; };
+		CA70E646199EC0DB00FE980D /* SocialCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialCell.m; sourceTree = "<group>"; };
+		CA70E648199EC22F00FE980D /* people.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = people.png; sourceTree = "<group>"; };
+		CA70E649199EC22F00FE980D /* people@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "people@2x.png"; sourceTree = "<group>"; };
+		CA70E64C199EC49900FE980D /* members.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = members.plist; sourceTree = "<group>"; };
+		CA70E64E199ED06E00FE980D /* enderson.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enderson.png; sourceTree = "<group>"; };
+		CA70E64F199ED06E00FE980D /* enderson@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "enderson@2x.png"; sourceTree = "<group>"; };
+		CA70E652199ED0D500FE980D /* leonan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leonan.png; sourceTree = "<group>"; };
+		CA70E653199ED0D500FE980D /* leonan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leonan@2x.png"; sourceTree = "<group>"; };
+		CA70E65E199ED2DC00FE980D /* kaio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kaio.png; sourceTree = "<group>"; };
+		CA70E65F199ED2DC00FE980D /* kaio@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kaio@2x.png"; sourceTree = "<group>"; };
+		CA70E662199ED73000FE980D /* twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter@2x.png"; sourceTree = "<group>"; };
+		CA70E663199ED73000FE980D /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
+		CA70E664199ED73000FE980D /* face@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "face@2x.png"; sourceTree = "<group>"; };
+		CA70E665199ED73000FE980D /* face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = face.png; sourceTree = "<group>"; };
+		CA70E666199ED73000FE980D /* insta@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "insta@2x.png"; sourceTree = "<group>"; };
+		CA70E667199ED73000FE980D /* insta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = insta.png; sourceTree = "<group>"; };
+		CA70E672199ED95700FE980D /* moa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moa.png; sourceTree = "<group>"; };
+		CA70E673199ED95700FE980D /* moa@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moa@2x.png"; sourceTree = "<group>"; };
+		CA70E676199EDA0000FE980D /* saulo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = saulo.png; sourceTree = "<group>"; };
+		CA70E677199EDA0000FE980D /* saulo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "saulo@2x.png"; sourceTree = "<group>"; };
 		CAA7051F195D922B00325814 /* libPods-Xafurdaria-XCDYouTubeKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Xafurdaria-XCDYouTubeKit.a"; path = "Pods/build/Debug-iphoneos/libPods-Xafurdaria-XCDYouTubeKit.a"; sourceTree = "<group>"; };
 		CAB56D4A195E39380061CDB1 /* Parent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parent.h; sourceTree = "<group>"; };
 		CAB56D4B195E39380061CDB1 /* Parent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parent.m; sourceTree = "<group>"; };
@@ -178,6 +219,8 @@
 		8441E12A178A255500C45088 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CA70E645199EC0DB00FE980D /* SocialCell.h */,
+				CA70E646199EC0DB00FE980D /* SocialCell.m */,
 				CA3FFA37195D7F370018D2E8 /* MainVideoCell.h */,
 				CA3FFA38195D7F370018D2E8 /* MainVideoCell.m */,
 				CAC95C01199EA4F0007A5EDE /* BigTableViewCell.h */,
@@ -240,6 +283,7 @@
 		849048911787ACC900418F8E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CA70E64C199EC49900FE980D /* members.plist */,
 				84AE058B178CEC2600D2F3A9 /* Komika Axis.ttf */,
 				849048921787ACC900418F8E /* Xafurdaria-Info.plist */,
 				849048931787ACC900418F8E /* InfoPlist.strings */,
@@ -255,6 +299,24 @@
 		849048BF1787ADF600418F8E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CA70E662199ED73000FE980D /* twitter@2x.png */,
+				CA70E663199ED73000FE980D /* twitter.png */,
+				CA70E664199ED73000FE980D /* face@2x.png */,
+				CA70E665199ED73000FE980D /* face.png */,
+				CA70E666199ED73000FE980D /* insta@2x.png */,
+				CA70E667199ED73000FE980D /* insta.png */,
+				CA70E65E199ED2DC00FE980D /* kaio.png */,
+				CA70E65F199ED2DC00FE980D /* kaio@2x.png */,
+				CA70E652199ED0D500FE980D /* leonan.png */,
+				CA70E653199ED0D500FE980D /* leonan@2x.png */,
+				CA70E64E199ED06E00FE980D /* enderson.png */,
+				CA70E64F199ED06E00FE980D /* enderson@2x.png */,
+				CA70E676199EDA0000FE980D /* saulo.png */,
+				CA70E677199EDA0000FE980D /* saulo@2x.png */,
+				CA70E672199ED95700FE980D /* moa.png */,
+				CA70E673199ED95700FE980D /* moa@2x.png */,
+				CA70E648199EC22F00FE980D /* people.png */,
+				CA70E649199EC22F00FE980D /* people@2x.png */,
 				CAC95C0C199EBA0E007A5EDE /* Xafurdaria960.png */,
 				CAC95C0A199EB890007A5EDE /* logo58x58.png */,
 				CAC95C08199EB825007A5EDE /* logo80x80.png */,
@@ -398,23 +460,42 @@
 			buildActionMask = 2147483647;
 			files = (
 				849048951787ACC900418F8E /* InfoPlist.strings in Resources */,
+				CA70E655199ED0D500FE980D /* leonan@2x.png in Resources */,
+				CA70E66B199ED73000FE980D /* face.png in Resources */,
 				CA370BF9199D641700AFDACE /* calendar.png in Resources */,
+				CA70E64B199EC22F00FE980D /* people@2x.png in Resources */,
+				CA70E675199ED95700FE980D /* moa@2x.png in Resources */,
 				8490489D1787ACC900418F8E /* Default.png in Resources */,
 				CAC95C07199EB7BF007A5EDE /* Images.xcassets in Resources */,
+				CA70E660199ED2DC00FE980D /* kaio.png in Resources */,
 				CA086ECF1968CC0800F77FB5 /* logo.png in Resources */,
+				CA70E654199ED0D500FE980D /* leonan.png in Resources */,
+				CA70E678199EDA0000FE980D /* saulo.png in Resources */,
 				CA370BF7199D5C1C00AFDACE /* maxresdefault.jpg in Resources */,
 				CA64BE59195CA0E40030A555 /* placeholder.jpeg in Resources */,
+				CA70E66D199ED73000FE980D /* insta.png in Resources */,
+				CA70E661199ED2DC00FE980D /* kaio@2x.png in Resources */,
+				CA70E66A199ED73000FE980D /* face@2x.png in Resources */,
 				CAC95C0B199EB890007A5EDE /* logo58x58.png in Resources */,
+				CA70E668199ED73000FE980D /* twitter@2x.png in Resources */,
 				8490489F1787ACC900418F8E /* Default@2x.png in Resources */,
+				CA70E651199ED06E00FE980D /* enderson@2x.png in Resources */,
 				CAC95C09199EB825007A5EDE /* logo80x80.png in Resources */,
+				CA70E674199ED95700FE980D /* moa.png in Resources */,
 				849048A11787ACC900418F8E /* Default-568h@2x.png in Resources */,
+				CA70E64D199EC49900FE980D /* members.plist in Resources */,
+				CA70E679199EDA0000FE980D /* saulo@2x.png in Resources */,
 				CAC95C0D199EBA0E007A5EDE /* Xafurdaria960.png in Resources */,
+				CA70E66C199ED73000FE980D /* insta@2x.png in Resources */,
 				849048A41787ACC900418F8E /* MainStoryboard_iPhone.storyboard in Resources */,
 				CA64BE65195CA5400030A555 /* eye.png in Resources */,
+				CA70E64A199EC22F00FE980D /* people.png in Resources */,
 				84C280D7178B9ACD00455C98 /* 37x-Checkmark.png in Resources */,
+				CA70E669199ED73000FE980D /* twitter.png in Resources */,
 				CAC95C05199EB79C007A5EDE /* Xafurdaria1136.png in Resources */,
 				84C280D8178B9ACD00455C98 /* 37x-Checkmark@2x.png in Resources */,
 				CA64BE66195CA5400030A555 /* clock.png in Resources */,
+				CA70E650199ED06E00FE980D /* enderson.png in Resources */,
 				84AE058C178CEC2600D2F3A9 /* Komika Axis.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -469,6 +550,7 @@
 				CA370BFC199D64DD00AFDACE /* NewVideoTableViewController.m in Sources */,
 				CA3FFA39195D7F370018D2E8 /* MainVideoCell.m in Sources */,
 				CAB56D4C195E39380061CDB1 /* Parent.m in Sources */,
+				CA70E647199EC0DB00FE980D /* SocialCell.m in Sources */,
 				CA64BE52195C9F020030A555 /* Video.m in Sources */,
 				CA370BF5199D58F600AFDACE /* ImageHigh.m in Sources */,
 				CA3FFA36195D7EB00018D2E8 /* MainVideoViewController.m in Sources */,

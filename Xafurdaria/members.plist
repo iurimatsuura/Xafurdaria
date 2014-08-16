@@ -2,50 +2,80 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>nathalia</key>
+	<key>saulo</key>
 	<dict>
-		<key>Name</key>
-		<string>Nathalia Santoro</string>
-		<key>Twitter</key>
-		<string>Em breve</string>
-		<key>Picture</key>
-		<string>nathalia</string>
-		<key>FaceProfile</key>
-		<string>nathaliasantorofitness</string>
 		<key>Facebook</key>
-		<string>518665344828009</string>
+		<string>100003093726808</string>
+		<key>FaceProfile</key>
+		<string>SaulinhoSoul</string>
 		<key>Instagram</key>
-		<string>nathaliasantoro</string>
+		<string>saulofreitasxafurdaria</string>
+		<key>Twitter</key>
+		<string></string>
+		<key>Picture</key>
+		<string>saulo</string>
+		<key>Name</key>
+		<string>Saulo Freitas</string>
 	</dict>
-	<key>renan</key>
+	<key>leonan</key>
 	<dict>
-		<key>FaceProfile</key>
-		<string>Renan4FitClub</string>
-		<key>Picture</key>
-		<string>renan</string>
-		<key>Name</key>
-		<string>Renan Corrêa</string>
 		<key>Twitter</key>
-		<string>Renan4FitClub</string>
-		<key>Instagram</key>
-		<string>renan4fitclub</string>
+		<string>LeonanPinheiro</string>
+		<key>Picture</key>
+		<string>leonan</string>
+		<key>FaceProfile</key>
+		<string>LeonanPinheiro</string>
 		<key>Facebook</key>
-		<string>100002625706001</string>
+		<string>100000757927482</string>
+		<key>Instagram</key>
+		<string>leonanpinheiro</string>
+		<key>Name</key>
+		<string>Leonan Pinheiro</string>
 	</dict>
-	<key>felipe</key>
+	<key>kaio</key>
+	<dict>
+		<key>Name</key>
+		<string>Kaio Oliveira</string>
+		<key>Twitter</key>
+		<string>kaiooliveiras</string>
+		<key>Picture</key>
+		<string>kaio</string>
+		<key>FaceProfile</key>
+		<string>kaiooliveiras</string>
+		<key>Facebook</key>
+		<string>100002177752761</string>
+		<key>Instagram</key>
+		<string>kaiooliveiraoficial</string>
+	</dict>
+	<key>enderson</key>
 	<dict>
 		<key>FaceProfile</key>
-		<string>fefrancooficial</string>
+		<string>endersonbritoo</string>
 		<key>Picture</key>
-		<string>felipe</string>
+		<string>enderson</string>
 		<key>Name</key>
-		<string>Felipe Franco</string>
+		<string>Enderson Brito</string>
 		<key>Twitter</key>
-		<string>FeFrancoOficial</string>
-		<key>Facebook</key>
-		<string>275580702581792</string>
+		<string>endbritoficial</string>
 		<key>Instagram</key>
-		<string>fefrancooficial</string>
+		<string>endersonbrito</string>
+		<key>Facebook</key>
+		<string>100002285656109</string>
+	</dict>
+	<key>moa</key>
+	<dict>
+		<key>FaceProfile</key>
+		<string>moaxafurdaria</string>
+		<key>Picture</key>
+		<string>moa</string>
+		<key>Name</key>
+		<string>Moacir Neto</string>
+		<key>Twitter</key>
+		<string></string>
+		<key>Facebook</key>
+		<string>100002083974307</string>
+		<key>Instagram</key>
+		<string>moaxafurdaria</string>
 	</dict>
 </dict>
 </plist>

@@ -23,7 +23,7 @@
     
     self.members = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"members" ofType:@"plist"]];
     
-    _membersNames = [[NSMutableArray alloc]initWithObjects:@"renan", @"felipe",@"nathalia", nil];
+    _membersNames = [[NSMutableArray alloc]initWithObjects:@"kaio", @"enderson",@"leonan",@"moa",@"saulo", nil];
     _socialImages = [[NSMutableArray alloc]initWithObjects:@"insta",@"face",@"twitter", nil];
     
     self.pageControl.numberOfPages = [[self.members allKeys]count];
@@ -62,6 +62,11 @@
         URL = [NSURL URLWithString:[NSString stringWithFormat:@"fb://profile/%@", [member objectForKey:@"Facebook"]]];
     }
     else{
+        if ([[member objectForKey:@"Twitter"] isEqualToString:@""]) {
+            [self showNoAppSocialAlert:@"Twitter"];
+            
+            return;
+        }
         URL = [NSURL URLWithString:[NSString stringWithFormat:@"twitter://user?screen_name=%@", [member objectForKey:@"Twitter"]]];
     }
     
@@ -94,7 +99,12 @@
         cell.profileName.text = [NSString stringWithFormat:@"/%@",[member objectForKey:@"FaceProfile"]];
     }
     else {
-        cell.profileName.text = [NSString stringWithFormat:@"@%@",[member objectForKey:@"Twitter"]];
+        if (![[member objectForKey:@"Twitter"] isEqualToString:@""]) {
+            cell.profileName.text = [NSString stringWithFormat:@"@%@",[member objectForKey:@"Twitter"]];
+        }
+        else{
+            cell.profileName.text = @"";
+        }
     }
     
     cell.socialImageLogo.image = [UIImage imageNamed:[_socialImages objectAtIndex:indexPath.row]];
@@ -115,6 +125,17 @@
                                              otherButtonTitles:nil];
     [theAlert show];
 }
+
+-(void)showNoAppSocialAlert:(NSString*)socialMedia
+{
+    UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"Desculpe"
+                                                       message:[NSString stringWithFormat:@"Membro sem %@",socialMedia]
+                                                      delegate:self
+                                             cancelButtonTitle:@"OK"
+                                             otherButtonTitles:nil];
+    [theAlert show];
+}
+
 -(void)createMembersScrollView
 {
     for (int i = 0; i < [self.members allKeys].count; i++) {
@@ -137,7 +158,7 @@
         profileImageView.image = [UIImage imageNamed:memberKey];
         profileImageView.layer.masksToBounds = YES;
         profileImageView.layer.cornerRadius = 50.0;
-        profileImageView.layer.borderColor = [UIColor colorWithRed:0.475 green:0.686 blue:0.114 alpha:1.000].CGColor;
+        profileImageView.layer.borderColor = [UIColor colorWithRed:0.996 green:0.860 blue:0.047 alpha:1.000].CGColor;
         profileImageView.layer.borderWidth = 3.0f;
         profileImageView.layer.rasterizationScale = [UIScreen mainScreen].scale;
         profileImageView.layer.shouldRasterize = YES;
@@ -146,9 +167,9 @@
         [subview addSubview:profileImageView];
         
         UILabel* nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(41, 135, 198, 21)];
-        nameLabel.textColor = [UIColor colorWithRed:0.475 green:0.686 blue:0.114 alpha:1.000];
+        nameLabel.textColor = [UIColor colorWithRed:0.996 green:0.857 blue:0.047 alpha:1.000];
         nameLabel.textAlignment = NSTextAlignmentCenter;
-        nameLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:21];
+        nameLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:21];
         nameLabel.text = [member objectForKey:@"Name"];
         
         [subview addSubview:nameLabel];

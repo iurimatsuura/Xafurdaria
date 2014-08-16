@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1FD9D6A8C2604B0A80D9DC6F"
+               BlueprintIdentifier = "4A5F4133604A4175B78964C3"
                BuildableName = "libPods-Xafurdaria-ODRefreshControl.a"
                BlueprintName = "Pods-Xafurdaria-ODRefreshControl"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -10,13 +10,17 @@
 #import <AVFoundation/AVAudioPlayer.h>
 #import <CoreFoundation/CoreFoundation.h>
 #import "MyNavigationViewController.h"
+#import "MFSideMenuContainerViewController.h"
+#import <Appirater/Appirater.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [self setCustomComponentProperties];
-
+    [self configureSideMenu];
+    [self configureAppRiter];
+    
     return YES;
 }
 
@@ -68,7 +72,7 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    [Appirater appEnteredForeground:YES];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
@@ -79,6 +83,35 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+
+-(void)configureSideMenu
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:[NSBundle mainBundle]];
+    
+    MFSideMenuContainerViewController *container = (MFSideMenuContainerViewController *)self.window.rootViewController;
+    
+    UINavigationController *navigationController = [storyboard instantiateViewControllerWithIdentifier:@"VideoViewController"];
+    
+    UINavigationController *leftSideMenuViewController = [storyboard instantiateViewControllerWithIdentifier:@"LeftSideViewController"];
+    
+    [container setLeftMenuViewController:leftSideMenuViewController];
+    [container setCenterViewController:navigationController];
+    
+    [container setMenuSlideAnimationEnabled:YES];
+    [container setMenuSlideAnimationFactor:9.0f];
+    container.panMode = MFSideMenuPanModeCenterViewController;
+}
+
+-(void)configureAppRiter
+{
+    [Appirater setAppId:@"672131590"];
+    [Appirater setDaysUntilPrompt:4];
+    [Appirater setUsesUntilPrompt:5];
+    [Appirater setTimeBeforeReminding:1];
+    [Appirater setDebug:YES];
+    [Appirater appLaunched:YES];
 }
 
 -(void)setCustomComponentProperties

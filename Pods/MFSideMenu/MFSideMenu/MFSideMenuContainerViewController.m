@@ -104,6 +104,7 @@ typedef enum {
     }
 }
 
+
 #pragma mark -
 #pragma mark - View Lifecycle
 
@@ -123,35 +124,6 @@ typedef enum {
         
         self.viewHasAppeared = YES;
     }
-}
-
-- (void)viewWillLayoutSubviews {
-    [super viewWillLayoutSubviews];
-    
-    if([self respondsToSelector:@selector(topLayoutGuide)]) {
-        UIEdgeInsets insets = UIEdgeInsetsMake([self.topLayoutGuide length], 0, 0, 0);
-        if(_leftSideMenuViewController &&
-            [_leftSideMenuViewController automaticallyAdjustsScrollViewInsets] &&
-            [_leftSideMenuViewController.view respondsToSelector:@selector(setContentInset:)]) {
-            [(UIScrollView *)_leftSideMenuViewController.view setContentInset:insets];
-        }
-        if(_rightSideMenuViewController &&
-            [_rightSideMenuViewController automaticallyAdjustsScrollViewInsets] &&
-            [_rightSideMenuViewController.view respondsToSelector:@selector(setContentInset:)]) {
-            [(UIScrollView *)_rightSideMenuViewController.view setContentInset:insets];
-        }
-    }
-}
-
-
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    if (self.centerViewController) {
-        if ([self.centerViewController isKindOfClass:[UINavigationController class]]) {
-            return [((UINavigationController *)self.centerViewController).topViewController preferredStatusBarStyle];
-        }
-        return [self.centerViewController preferredStatusBarStyle];
-    }
-    return UIStatusBarStyleDefault;
 }
 
 
@@ -222,6 +194,7 @@ typedef enum {
 - (void)setCenterViewController:(UIViewController *)centerViewController {
     [self removeCenterGestureRecognizers];
     [self removeChildViewControllerFromContainer:_centerViewController];
+    self.shadow = nil;
     
     CGPoint origin = ((UIViewController *)_centerViewController).view.frame.origin;
     _centerViewController = centerViewController;
@@ -233,11 +206,7 @@ typedef enum {
     
     [_centerViewController didMoveToParentViewController:self];
     
-    if(self.shadow) {
-        [self.shadow setShadowedView:centerViewController.view];
-    } else {
-        self.shadow = [MFSideMenuShadow shadowWithView:[_centerViewController view]];
-    }
+    self.shadow = [MFSideMenuShadow shadowWithView:[_centerViewController view]];
     [self.shadow draw];
     [self addCenterGestureRecognizers];
 }
@@ -451,8 +420,8 @@ typedef enum {
     CGFloat xOffset = [self.centerViewController view].frame.origin.x;
     CGFloat xPositionDivider = (self.menuSlideAnimationEnabled) ? self.menuSlideAnimationFactor : 1.0;
     rightMenuFrame.origin.x = self.menuContainerView.frame.size.width - _rightMenuWidth
-        + xOffset / xPositionDivider
-        + _rightMenuWidth / xPositionDivider;
+    + xOffset / xPositionDivider
+    + _rightMenuWidth / xPositionDivider;
     
     [self.rightMenuViewController view].frame = rightMenuFrame;
 }
@@ -535,7 +504,7 @@ typedef enum {
             return [self centerViewControllerPanEnabled];
         
         if([gestureRecognizer.view isEqual:self.menuContainerView])
-           return [self sideMenuPanEnabled];
+            return [self sideMenuPanEnabled];
         
         // pan gesture is attached to a custom view
         return YES;
@@ -545,11 +514,6 @@ typedef enum {
 }
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
-    if ([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
-        CGPoint velocity = [(UIPanGestureRecognizer *)gestureRecognizer velocityInView:gestureRecognizer.view];
-        BOOL isHorizontalPanning = fabsf(velocity.x) > fabsf(velocity.y);
-        return isHorizontalPanning;
-    }
     return YES;
 }
 
@@ -733,7 +697,6 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
                              animated:(BOOL)animated
                            completion:(void (^)(void))completion {
     void (^innerCompletion)() = ^ {
-        self.panGestureVelocity = 0.0;
         if(completion) completion();
     };
     
@@ -779,13 +742,16 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
     CGFloat duration;
     if(ABS(self.panGestureVelocity) > 1.0) {
         // try to continue the animation at the speed the user was swiping
-        duration = animationPositionDelta / ABS(self.panGestureVelocity);
+        //        duration = animationPositionDelta / ABS(self.panGestureVelocity);
+        duration = 0.5;
     } else {
         // no swipe was used, user tapped the bar button item
         // TODO: full animation duration hard to calculate with two menu widths
-        CGFloat menuWidth = MAX(_leftMenuWidth, _rightMenuWidth);
-        CGFloat animationPerecent = (animationPositionDelta == 0) ? 0 : menuWidth / animationPositionDelta;
-        duration = self.menuAnimationDefaultDuration * animationPerecent;
+//        CGFloat menuWidth = MAX(_leftMenuWidth, _rightMenuWidth);
+//        CGFloat animationPerecent = (animationPositionDelta == 0) ? 0 : menuWidth / animationPositionDelta;
+//        duration = self.menuAnimationDefaultDuration * animationPerecent;
+        duration = 0.5;
+
     }
     
     return MIN(duration, self.menuAnimationMaxDuration);

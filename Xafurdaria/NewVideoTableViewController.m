@@ -16,6 +16,7 @@
 #import "Parent.h"
 #import <XCDYouTubeKit/XCDYouTubeKit.h>
 #import "BigTableViewCell.h"
+#import "MFSideMenu.h"
 
 @interface NewVideoTableViewController ()
 
@@ -85,6 +86,11 @@
 }
 - (NSUInteger)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskPortrait;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+{
+    return UIInterfaceOrientationPortrait;
 }
 
 - (void)canRotate { }
@@ -285,6 +291,10 @@
     NSString* date = [NSString stringWithFormat:@"%@/%@/%@",day,month,year];
     
     return date;
+}
+
+- (IBAction)showMenu:(id)sender {
+    [self.menuContainerViewController toggleLeftSideMenuCompletion:nil];
 }
 
 

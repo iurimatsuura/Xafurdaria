@@ -26,4 +26,6 @@
 @property (strong, nonatomic)  NSMutableArray *videos;
 @property (strong, nonatomic)  NSMutableArray *videosIDs;
 
+- (IBAction)showMenu:(id)sender;
+
 @end
