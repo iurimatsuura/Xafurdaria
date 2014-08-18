@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <RestKit/RestKit.h>
 
 @interface ImageHigh : NSObject
 
 @property (nonatomic, strong) NSString* url;
 @property (nonatomic, strong) UIImage* image;
+
++(RKObjectMapping*)mapping;
 
 @end

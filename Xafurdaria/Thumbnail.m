@@ -10,29 +10,15 @@
 
 @implementation Thumbnail
 
--(void)mapping{
++(RKObjectMapping*)mapping{
     
-    RKObjectMapping* imageMapping = [RKObjectMapping mappingForClass:[ImageMedium class] ];
+    RKObjectMapping* thumbMapping = [RKObjectMapping mappingForClass:[Thumbnail class] ];
     
-    RKObjectMapping* highImageMapping = [RKObjectMapping mappingForClass:[ImageHigh class] ];
+    [thumbMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"medium"                                                                                 toKeyPath:@"medium"                                                                               withMapping:[ImageMedium mapping]]];
     
-    // NOTE: When your source and destination key paths are symmetrical, you can use addAttributesFromArray: as a shortcut instead of addAttributesFromDictionary:
-    [imageMapping addAttributeMappingsFromArray:@[ @"url"]];
+    [thumbMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"maxres"                                                                                 toKeyPath:@"high"                                                                               withMapping:[ImageHigh mapping]]];
     
-    // Now configure the Article mapping
-    RKObjectMapping* itemMapping = [RKObjectMapping mappingForClass:[Thumbnail class] ];
-    [itemMapping addAttributeMappingsFromDictionary:@{
-                                                      
-                                                      }];
-    
-    // Define the relationship mapping
-    [itemMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"medium"
-                                                                                toKeyPath:@"imageMedium"
-                                                                              withMapping:imageMapping]];
-    
-    [itemMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"high"
-                                                                                toKeyPath:@"imageHigh"
-                                                                              withMapping:highImageMapping]];
+    return thumbMapping;
 }
 
 @end

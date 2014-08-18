@@ -7,8 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <RestKit/RestKit.h>
 
 @interface ContentDetailsFirst : NSObject
 
 @property (nonatomic, strong) NSString* videoId;
+
++(RKObjectMapping*)mapping;
+
 @end

@@ -10,4 +10,12 @@
 
 @implementation ImageHigh
 
++(RKObjectMapping*)mapping
+{
+    RKObjectMapping* highImageMapping = [RKObjectMapping mappingForClass:[ImageHigh class] ];
+    [highImageMapping addAttributeMappingsFromArray:@[ @"url"]];
+    
+    return highImageMapping;
+}
+
 @end

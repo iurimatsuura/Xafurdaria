@@ -11,7 +11,9 @@
 #import <CoreFoundation/CoreFoundation.h>
 #import "MyNavigationViewController.h"
 #import "MFSideMenuContainerViewController.h"
-#import <Appirater/Appirater.h>
+#import <RestKit/RestKit.h>
+#import "Parent.h"
+#import "Flurry.h"
 
 @implementation AppDelegate
 
@@ -20,6 +22,12 @@
     [self setCustomComponentProperties];
     [self configureSideMenu];
     [self configureAppRiter];
+    [self configureFlurry];
+    
+    [self setLastVideoFromUserDefaults];
+    [self makeRequest];
+
+    application.applicationIconBadgeNumber = 0;
     
     return YES;
 }
@@ -66,8 +74,18 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    __block UIBackgroundTaskIdentifier updateLastVideo =[[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
+        [[UIApplication sharedApplication] endBackgroundTask:updateLastVideo];
+        updateLastVideo=UIBackgroundTaskInvalid;
+    } ];
+    
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:10*60
+                                     target:self
+                                   selector:@selector(makeRequest)
+                                   userInfo:nil
+                                    repeats:YES];
+    
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -78,11 +96,70 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    application.applicationIconBadgeNumber = 0;
+    [self.timer invalidate];
+
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+-(void)sendNotificationWithVideoName:(NSString*)name;
+{
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    //    notification.fireDate = [NSDate date];
+    notification.alertBody = [NSString stringWithFormat:@"Video Novo: %@",name];
+    notification.applicationIconBadgeNumber++;
+    [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNewVideoNotification
+                                                            object:self];
+    });
+}
+
+-(void)makeRequest{
+        
+    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:[Parent mapping] method:RKRequestMethodGET pathPattern:nil keyPath:@"" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    NSURL *url2 = [NSURL URLWithString:[NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/playlistItems?part=id,snippet,contentDetails&maxResults=1&playlistId=UU21wUP_bie85msUyT3eJnew&key=AIzaSyA7-TdCyHBVFoGvp2oixemxDX72a_C0Xcs"]];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:url2];
+    
+    RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ responseDescriptor ]];
+   
+    [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        
+        Parent* rootJson = [mappingResult.array objectAtIndex:0];
+        Item* lastPostedVideo = [rootJson.items objectAtIndex:0];
+        NSString* lastVideoId = lastPostedVideo.contentDetails.videoId;
+        
+        [self sendNotificationWithVideoName:lastPostedVideo.snippet.title];
+
+        if (![self.lastVideo isEqualToString:lastVideoId]) {
+            if (self.lastVideo) {
+                [self sendNotificationWithVideoName:lastPostedVideo.snippet.title];
+            }
+            
+            self.lastVideo = lastVideoId;
+
+            [[NSUserDefaults standardUserDefaults] setValue:self.lastVideo forKey:@"lastVideoId"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }
+        
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        RKLogError(@"Operation failed with error: %@", error);
+    }];
+    
+    [objectRequestOperation start];
+}
+
+-(void)setLastVideoFromUserDefaults
+{
+    self.lastVideo = [[NSUserDefaults standardUserDefaults] valueForKey:@"lastVideoId"];
 }
 
 
@@ -107,11 +184,39 @@
 -(void)configureAppRiter
 {
     [Appirater setAppId:@"672131590"];
-    [Appirater setDaysUntilPrompt:4];
+    [Appirater setDaysUntilPrompt:3];
     [Appirater setUsesUntilPrompt:5];
     [Appirater setTimeBeforeReminding:1];
-    [Appirater setDebug:YES];
+    [Appirater setDebug:NO];
     [Appirater appLaunched:YES];
+    [Appirater setDelegate:self];
+}
+
+-(void)appiraterDidDisplayAlert:(Appirater *)appirater
+{
+    [Flurry logEvent:@"RateAlert_Displayed"];
+}
+
+-(void)appiraterDidOptToRemindLater:(Appirater *)appirater
+{
+    [Flurry logEvent:@"RateAlert_RemindLater"];
+}
+
+-(void)appiraterDidOptToRate:(Appirater *)appirater
+{
+    [Flurry logEvent:@"RateAlert_Rated"];
+}
+
+-(void)appiraterDidDeclineToRate:(Appirater *)appirater
+{
+    [Flurry logEvent:@"RateAlert_DeclineRate"];
+}
+
+-(void)configureFlurry
+{
+    [Flurry setCrashReportingEnabled:YES];
+    // Replace YOUR_API_KEY with the api key in the downloaded package
+    [Flurry startSession:@"5NK43V2CXF4QFF4RVSFM"];
 }
 
 -(void)setCustomComponentProperties
@@ -126,5 +231,6 @@
       NSFontAttributeName,
       nil]];
 }
+
 
 @end

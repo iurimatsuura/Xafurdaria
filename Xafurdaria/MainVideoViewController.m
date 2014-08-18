@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Iuri Mac. All rights reserved.
 //
 
+/*
 #import "MainVideoViewController.h"
 #import <AFNetworking/AFNetworking.h>
 #import <MediaPlayer/MediaPlayer.h>
@@ -16,11 +17,13 @@
 #import "Parent.h"
 #import <XCDYouTubeKit/XCDYouTubeKit.h>
 
+
 @interface MainVideoViewController ()
 
 @end
 
 @implementation MainVideoViewController
+
 
 - (void)viewDidLoad
 {
@@ -117,7 +120,7 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:url2];
     RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ responseDescriptor ]];
     [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-        RKLogInfo(@"Load collection of Items: %@", mappingResult.array);
+//        RKLogInfo(@"Load collection of Items: %@", mappingResult.array);
         
         Parent* rootJson = [mappingResult.array objectAtIndex:0];
         
@@ -152,7 +155,7 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:url2];
     RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ responseDescriptor ]];
     [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-        RKLogInfo(@"Load collection of Items: %@", mappingResult.array);
+//        RKLogInfo(@"Load collection of Items: %@", mappingResult.array);
         
         
         if (mappingResult.array.count != 0) {
@@ -281,3 +284,4 @@
 }
 
 @end
+*/

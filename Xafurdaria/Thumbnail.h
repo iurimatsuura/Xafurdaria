@@ -16,4 +16,6 @@
 @property (nonatomic, strong) ImageMedium* medium;
 @property (nonatomic, strong) ImageHigh* high;
 
++(RKObjectMapping*)mapping;
+
 @end

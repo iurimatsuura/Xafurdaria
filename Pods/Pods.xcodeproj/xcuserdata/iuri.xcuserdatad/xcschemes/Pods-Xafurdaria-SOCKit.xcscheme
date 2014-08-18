@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EBE7073907B74D419C3CA939"
+               BlueprintIdentifier = "CA4008AD07944597B0696BBD"
                BuildableName = "libPods-Xafurdaria-SOCKit.a"
                BlueprintName = "Pods-Xafurdaria-SOCKit"
                ReferencedContainer = "container:Pods.xcodeproj">

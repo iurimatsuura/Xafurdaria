@@ -12,19 +12,11 @@
 
 +(RKObjectMapping*)mapping{
     
-    RKObjectMapping* contentMapping = [RKObjectMapping mappingForClass:[ContentDetailsFirst class] ];
-    // NOTE: When your source and destination key paths are symmetrical, you can use addAttributesFromArray: as a shortcut instead of addAttributesFromDictionary:
-    [contentMapping addAttributeMappingsFromArray:@[ @"videoId"]];
+    RKObjectMapping* itemMapping = [RKObjectMapping mappingForClass:[Item class]];
     
-    RKObjectMapping* itemMapping = [RKObjectMapping mappingForClass:[Item class] ];
-    [itemMapping addAttributeMappingsFromDictionary:@{
-     
-     }];
+    [itemMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"contentDetails"                                                                                toKeyPath:@"contentDetails"                                                                              withMapping:[ContentDetailsFirst mapping]]];
     
-    // Define the relationship mapping
-    [itemMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"contentDetails"
-                                                                                   toKeyPath:@"contentDetails"
-                                                                                 withMapping:contentMapping]];
+    [itemMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"snippet"                                                                                toKeyPath:@"snippet"                                                                              withMapping:[Snippet mapping]]];
     
     return itemMapping;
 }

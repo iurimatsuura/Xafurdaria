@@ -7,7 +7,20 @@
 //
 
 #import "Snippet.h"
+#import "Thumbnail.h"
 
 @implementation Snippet
 
++(RKObjectMapping*)mapping{
+    
+    RKObjectMapping* snippetMapping = [RKObjectMapping mappingForClass:[Snippet class           ]];
+    
+    [snippetMapping addAttributeMappingsFromArray:@[ @"title",@"publishedAt"]];
+    
+    [snippetMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"thumbnails"
+                                                                                   toKeyPath:@"thumbnails"
+                                                                                 withMapping:[Thumbnail mapping]]];
+    
+    return snippetMapping;
+}
 @end

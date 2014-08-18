@@ -10,4 +10,13 @@
 
 @implementation ContentDetailsFirst
 
+
++(RKObjectMapping*)mapping
+{
+    RKObjectMapping* contentMapping = [RKObjectMapping mappingForClass:[ContentDetailsFirst class] ];
+    [contentMapping addAttributeMappingsFromArray:@[ @"videoId"]];
+    
+    return contentMapping;
+}
+
 @end

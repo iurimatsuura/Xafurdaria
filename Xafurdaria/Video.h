@@ -16,7 +16,6 @@
 @interface Video : NSObject
 
 @property (nonatomic, retain) NSString * videoId;
-@property (nonatomic, retain) Snippet *snippet;
 @property (nonatomic, retain) ContentDetailsVideo *contentDetails;
 @property (nonatomic, retain) Statistics *statistics;
 

@@ -10,4 +10,11 @@
 
 @implementation ImageMedium
 
++(RKObjectMapping*)mapping
+{
+    RKObjectMapping* imageMapping = [RKObjectMapping mappingForClass:[ImageMedium class] ];
+    [imageMapping addAttributeMappingsFromArray:@[ @"url"]];
+    
+    return imageMapping;
+}
 @end

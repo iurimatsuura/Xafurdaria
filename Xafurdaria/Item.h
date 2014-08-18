@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "ContentDetailsFirst.h"
-#import <RestKit/RestKit.h>
+#import "Snippet.h"
+#import "Video.h"
 
 @interface Item : NSObject
 
 @property (nonatomic, strong) ContentDetailsFirst* contentDetails;
+@property (nonatomic, strong) Snippet* snippet;
+@property (nonatomic, strong) Video* video;
 
 +(RKObjectMapping*)mapping;
 

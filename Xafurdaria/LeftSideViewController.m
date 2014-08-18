@@ -9,6 +9,7 @@
 #import "LeftSideViewController.h"
 #import "MFSideMenu.h"
 #import "SocialCell.h"
+#import "Flurry.h"
 
 @interface LeftSideViewController ()
 
@@ -54,12 +55,20 @@
     NSString* memberKey = [_membersNames objectAtIndex:self.pageControl.currentPage];
     NSDictionary* member = [self.members objectForKey: memberKey];
     
+    NSDictionary *articleParams = [NSDictionary dictionaryWithObjectsAndKeys:
+                                   [member objectForKey:@"Name"], @"Member",
+                                   nil];
+    
     if (indexPath.row == 0) {
         URL = [NSURL URLWithString:[NSString stringWithFormat:@"instagram://user?username=%@", [member objectForKey:@"Instagram"]]];
+        
+        [Flurry logEvent:@"Instagram_Clicked" withParameters:articleParams];
     }
     else if(indexPath.row == 1)
     {
         URL = [NSURL URLWithString:[NSString stringWithFormat:@"fb://profile/%@", [member objectForKey:@"Facebook"]]];
+        
+        [Flurry logEvent:@"Facebook_Clicked" withParameters:articleParams];
     }
     else{
         if ([[member objectForKey:@"Twitter"] isEqualToString:@""]) {
@@ -68,6 +77,8 @@
             return;
         }
         URL = [NSURL URLWithString:[NSString stringWithFormat:@"twitter://user?screen_name=%@", [member objectForKey:@"Twitter"]]];
+        
+        [Flurry logEvent:@"Twitter_Clicked" withParameters:articleParams];
     }
     
     if ([[UIApplication sharedApplication] canOpenURL:URL]) {

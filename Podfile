@@ -4,13 +4,14 @@
 target "Xafurdaria" do
 
 pod 'MFSideMenu'
-pod 'MBProgressHUD', '~> 0.5'
+pod 'MBProgressHUD'
 pod 'TTTAttributedLabel'
 pod 'RestKit'
-pod 'ODRefreshControl', '~> 1.1.0'
+pod 'ODRefreshControl'
 pod 'SDWebImage'
 pod 'XCDYouTubeKit'
-pod "Appirater"
-
+pod 'Appirater'
+pod 'AMScrollingNavbar'
+pod 'CBZSplashView', '~> 1.0.0'
 end
 

@@ -27,6 +27,8 @@
 		84EEEA2A178E401E00D6CF6E /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84EEEA29178E401E00D6CF6E /* MediaPlayer.framework */; };
 		CA086ECD1968A8E500F77FB5 /* MyNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA086ECC1968A8E500F77FB5 /* MyNavigationViewController.m */; };
 		CA086ECF1968CC0800F77FB5 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = CA086ECE1968CC0800F77FB5 /* logo.png */; };
+		CA2A4A3D199FCF3100276BE9 /* libFlurry_5.2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA2A4A3C199FCF3100276BE9 /* libFlurry_5.2.0.a */; };
+		CA2A4A3F199FCF5100276BE9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA2A4A3E199FCF5100276BE9 /* SystemConfiguration.framework */; };
 		CA370BF5199D58F600AFDACE /* ImageHigh.m in Sources */ = {isa = PBXBuildFile; fileRef = CA370BF4199D58F600AFDACE /* ImageHigh.m */; };
 		CA370BF7199D5C1C00AFDACE /* maxresdefault.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CA370BF6199D5C1C00AFDACE /* maxresdefault.jpg */; };
 		CA370BF9199D641700AFDACE /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = CA370BF8199D641700AFDACE /* calendar.png */; };
@@ -67,6 +69,7 @@
 		CA70E678199EDA0000FE980D /* saulo.png in Resources */ = {isa = PBXBuildFile; fileRef = CA70E676199EDA0000FE980D /* saulo.png */; };
 		CA70E679199EDA0000FE980D /* saulo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA70E677199EDA0000FE980D /* saulo@2x.png */; };
 		CAB56D4C195E39380061CDB1 /* Parent.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB56D4B195E39380061CDB1 /* Parent.m */; };
+		CABC851419A12D3F00A04C9C /* xafurdaria_logo_splash.png in Resources */ = {isa = PBXBuildFile; fileRef = CABC851319A12D3F00A04C9C /* xafurdaria_logo_splash.png */; };
 		CAC95C03199EA4F0007A5EDE /* BigTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC95C02199EA4F0007A5EDE /* BigTableViewCell.m */; };
 		CAC95C05199EB79C007A5EDE /* Xafurdaria1136.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC95C04199EB79C007A5EDE /* Xafurdaria1136.png */; };
 		CAC95C07199EB7BF007A5EDE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAC95C06199EB7BF007A5EDE /* Images.xcassets */; };
@@ -104,6 +107,9 @@
 		CA086ECB1968A8E500F77FB5 /* MyNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavigationViewController.h; sourceTree = "<group>"; };
 		CA086ECC1968A8E500F77FB5 /* MyNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavigationViewController.m; sourceTree = "<group>"; };
 		CA086ECE1968CC0800F77FB5 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		CA2A4A3B199FCF3100276BE9 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		CA2A4A3C199FCF3100276BE9 /* libFlurry_5.2.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_5.2.0.a; sourceTree = "<group>"; };
+		CA2A4A3E199FCF5100276BE9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		CA370BF3199D58F600AFDACE /* ImageHigh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageHigh.h; sourceTree = "<group>"; };
 		CA370BF4199D58F600AFDACE /* ImageHigh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageHigh.m; sourceTree = "<group>"; };
 		CA370BF6199D5C1C00AFDACE /* maxresdefault.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = maxresdefault.jpg; sourceTree = "<group>"; };
@@ -162,6 +168,7 @@
 		CAA7051F195D922B00325814 /* libPods-Xafurdaria-XCDYouTubeKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Xafurdaria-XCDYouTubeKit.a"; path = "Pods/build/Debug-iphoneos/libPods-Xafurdaria-XCDYouTubeKit.a"; sourceTree = "<group>"; };
 		CAB56D4A195E39380061CDB1 /* Parent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parent.h; sourceTree = "<group>"; };
 		CAB56D4B195E39380061CDB1 /* Parent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parent.m; sourceTree = "<group>"; };
+		CABC851319A12D3F00A04C9C /* xafurdaria_logo_splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xafurdaria_logo_splash.png; sourceTree = "<group>"; };
 		CAC95C01199EA4F0007A5EDE /* BigTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigTableViewCell.h; sourceTree = "<group>"; };
 		CAC95C02199EA4F0007A5EDE /* BigTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigTableViewCell.m; sourceTree = "<group>"; };
 		CAC95C04199EB79C007A5EDE /* Xafurdaria1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Xafurdaria1136.png; sourceTree = "<group>"; };
@@ -176,11 +183,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA2A4A3F199FCF5100276BE9 /* SystemConfiguration.framework in Frameworks */,
 				CA64BE62195CA3860030A555 /* libPods-Xafurdaria.a in Frameworks */,
 				84EEEA2A178E401E00D6CF6E /* MediaPlayer.framework in Frameworks */,
 				84AE0592178D16E700D2F3A9 /* QuartzCore.framework in Frameworks */,
 				8441E119178A12CB00C45088 /* CoreMedia.framework in Frameworks */,
 				8441E113178A0CB500C45088 /* AVFoundation.framework in Frameworks */,
+				CA2A4A3D199FCF3100276BE9 /* libFlurry_5.2.0.a in Frameworks */,
 				8490488B1787ACC900418F8E /* UIKit.framework in Frameworks */,
 				8490488D1787ACC900418F8E /* Foundation.framework in Frameworks */,
 				8490488F1787ACC900418F8E /* CoreGraphics.framework in Frameworks */,
@@ -250,6 +259,7 @@
 		849048891787ACC900418F8E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CA2A4A3E199FCF5100276BE9 /* SystemConfiguration.framework */,
 				CAA7051F195D922B00325814 /* libPods-Xafurdaria-XCDYouTubeKit.a */,
 				CA64BE61195CA3860030A555 /* libPods-Xafurdaria.a */,
 				CA64BE5F195CA37B0030A555 /* libPods-Xafurdaria-RestKit.a */,
@@ -299,6 +309,7 @@
 		849048BF1787ADF600418F8E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CABC851319A12D3F00A04C9C /* xafurdaria_logo_splash.png */,
 				CA70E662199ED73000FE980D /* twitter@2x.png */,
 				CA70E663199ED73000FE980D /* twitter.png */,
 				CA70E664199ED73000FE980D /* face@2x.png */,
@@ -343,6 +354,7 @@
 		84C280D0178B9A5600455C98 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				CA2A4A3A199FCF1E00276BE9 /* Flurry */,
 				84C280D9178B9B2900455C98 /* Helpers */,
 				84C280D1178B9AAD00455C98 /* MBProgressHUD */,
 			);
@@ -365,6 +377,15 @@
 				84C280DB178B9B3700455C98 /* HudUtility.m */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		CA2A4A3A199FCF1E00276BE9 /* Flurry */ = {
+			isa = PBXGroup;
+			children = (
+				CA2A4A3B199FCF3100276BE9 /* Flurry.h */,
+				CA2A4A3C199FCF3100276BE9 /* libFlurry_5.2.0.a */,
+			);
+			name = Flurry;
 			sourceTree = "<group>";
 		};
 		CA64BE3E195C9ECA0030A555 /* First Request */ = {
@@ -480,6 +501,7 @@
 				CA70E668199ED73000FE980D /* twitter@2x.png in Resources */,
 				8490489F1787ACC900418F8E /* Default@2x.png in Resources */,
 				CA70E651199ED06E00FE980D /* enderson@2x.png in Resources */,
+				CABC851419A12D3F00A04C9C /* xafurdaria_logo_splash.png in Resources */,
 				CAC95C09199EB825007A5EDE /* logo80x80.png in Resources */,
 				CA70E674199ED95700FE980D /* moa.png in Resources */,
 				849048A11787ACC900418F8E /* Default-568h@2x.png in Resources */,
@@ -655,10 +677,7 @@
 				GCC_PREFIX_HEADER = "Xafurdaria/Xafurdaria-Prefix.pch";
 				INFOPLIST_FILE = "Xafurdaria/Xafurdaria-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Xafurdaria";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -682,6 +701,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Xafurdaria",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

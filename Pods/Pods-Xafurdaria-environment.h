@@ -12,11 +12,23 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking 3
 #define COCOAPODS_VERSION_PATCH_AFNetworking 4
 
+// AMScrollingNavbar
+#define COCOAPODS_POD_AVAILABLE_AMScrollingNavbar
+#define COCOAPODS_VERSION_MAJOR_AMScrollingNavbar 1
+#define COCOAPODS_VERSION_MINOR_AMScrollingNavbar 0
+#define COCOAPODS_VERSION_PATCH_AMScrollingNavbar 1
+
 // Appirater
 #define COCOAPODS_POD_AVAILABLE_Appirater
 #define COCOAPODS_VERSION_MAJOR_Appirater 2
 #define COCOAPODS_VERSION_MINOR_Appirater 0
 #define COCOAPODS_VERSION_PATCH_Appirater 2
+
+// CBZSplashView
+#define COCOAPODS_POD_AVAILABLE_CBZSplashView
+#define COCOAPODS_VERSION_MAJOR_CBZSplashView 1
+#define COCOAPODS_VERSION_MINOR_CBZSplashView 0
+#define COCOAPODS_VERSION_PATCH_CBZSplashView 0
 
 // MBProgressHUD
 #define COCOAPODS_POD_AVAILABLE_MBProgressHUD

@@ -17,6 +17,6 @@
 
 @property (nonatomic, strong) Thumbnail* thumbnails;
 
-
++(RKObjectMapping*)mapping;
 
 @end
