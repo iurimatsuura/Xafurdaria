@@ -5,189 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Main Video View Controller - XAFURDARIA-->
-        <scene sceneID="2r8-21-JNT">
-            <objects>
-                <tableViewController id="fJY-lu-jfT" customClass="MainVideoViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9Dw-3G-A4A">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MainVideoCell" rowHeight="100" id="wEl-IJ-mI5" customClass="MainVideoCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="100"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wEl-IJ-mI5" id="HqR-7F-NSf">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="placeholder.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="19S-Eo-5by">
-                                            <rect key="frame" x="0.0" y="0.0" width="160" height="95"/>
-                                        </imageView>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V9x-hv-zPD">
-                                            <rect key="frame" x="160" y="10" width="160" height="80"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="gradient.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZIu-1L-xvd">
-                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="80"/>
-                                                </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="O Primeiro video dessa temporada" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="160" translatesAutoresizingMaskIntoConstraints="NO" id="nwE-LR-yt9">
-                                                    <rect key="frame" x="0.0" y="1" width="160" height="56"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                                    <color key="textColor" red="0.98369565219999999" green="0.84696320560000005" blue="0.19112273190000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="03:15" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRE-aJ-3ek">
-                                                    <rect key="frame" x="20" y="63" width="57" height="15"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" red="0.98369565219999999" green="0.84696320560000005" blue="0.19112273190000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="2222222" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKF-4m-YGf">
-                                                    <rect key="frame" x="93" y="63" width="65" height="15"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" red="0.98369565219999999" green="0.84696320560000005" blue="0.19112273190000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="eye.png" translatesAutoresizingMaskIntoConstraints="NO" id="7wd-k7-cVf">
-                                                    <rect key="frame" x="74" y="65" width="13" height="12"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="clock.png" translatesAutoresizingMaskIntoConstraints="NO" id="B3r-Iq-5w3">
-                                                    <rect key="frame" x="6" y="65" width="13" height="12"/>
-                                                </imageView>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.98823529409999999" green="0.74901960779999999" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <outlet property="containerInfoView" destination="V9x-hv-zPD" id="o79-2w-RLH"/>
-                                    <outlet property="timeImageView" destination="B3r-Iq-5w3" id="kO5-QN-U1o"/>
-                                    <outlet property="videoDuration" destination="LRE-aJ-3ek" id="jfa-yM-LGi"/>
-                                    <outlet property="videoImage" destination="19S-Eo-5by" id="aDX-y9-f9c"/>
-                                    <outlet property="videoName" destination="nwE-LR-yt9" id="E2c-u1-6bu"/>
-                                    <outlet property="videoViews" destination="JKF-4m-YGf" id="4RR-Fd-IQs"/>
-                                    <outlet property="viewsImageView" destination="7wd-k7-cVf" id="27N-HW-274"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="fJY-lu-jfT" id="7BD-3a-3sA"/>
-                            <outlet property="delegate" destination="fJY-lu-jfT" id="Sis-Kl-BE2"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="XAFURDARIA" id="14g-cp-z1n"/>
-                    <connections>
-                        <outlet property="tableView" destination="9Dw-3G-A4A" id="avP-pr-Elk"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3kh-Zb-wr4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="375" y="-809"/>
-        </scene>
-        <!--My Navigation View Controller-->
-        <scene sceneID="Y5K-bP-RFd">
-            <objects>
-                <navigationController definesPresentationContext="YES" id="xgs-RF-uaa" customClass="MyNavigationViewController" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="GWS-CB-WQr">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="fJY-lu-jfT" kind="relationship" relationship="rootViewController" id="TfF-iW-8RL"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="r7B-b2-HeX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-111" y="-809"/>
-        </scene>
-        <!--Table View Controller - XAFURDARIA-->
-        <scene sceneID="cIU-s4-CuX">
-            <objects>
-                <tableViewController id="thW-K3-90V" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="227" sectionHeaderHeight="22" sectionFooterHeight="22" id="Of1-8A-RsX">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VideoCell" rowHeight="227" id="kFx-Az-82R" customClass="BigTableViewCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="227"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kFx-Az-82R" id="alQ-94-jM1">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="227"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KpI-eU-mc0">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="181"/>
-                                        </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8F-T9-gLY">
-                                            <rect key="frame" x="234" y="194" width="68" height="21"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
-                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMK-L5-nhi">
-                                            <rect key="frame" x="30" y="196" width="74" height="15"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
-                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zE6-3K-HDY">
-                                            <rect key="frame" x="128" y="194" width="65" height="21"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
-                                            <color key="textColor" red="0.99607843137254903" green="0.76078431372549016" blue="0.047058823529411764" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="calendar.png" translatesAutoresizingMaskIntoConstraints="NO" id="gVD-kg-upU">
-                                            <rect key="frame" x="10" y="198" width="13" height="13"/>
-                                        </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clock.png" translatesAutoresizingMaskIntoConstraints="NO" id="NLA-FI-G2e">
-                                            <rect key="frame" x="112" y="198" width="13" height="13"/>
-                                        </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="eye.png" translatesAutoresizingMaskIntoConstraints="NO" id="PLo-2j-cSk">
-                                            <rect key="frame" x="211" y="198" width="13" height="13"/>
-                                        </imageView>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="dateImageView" destination="gVD-kg-upU" id="nPb-SW-7Y4"/>
-                                    <outlet property="dateLabel" destination="LMK-L5-nhi" id="zCJ-ta-45f"/>
-                                    <outlet property="timeImageView" destination="NLA-FI-G2e" id="0yh-p0-YVg"/>
-                                    <outlet property="videoDuration" destination="zE6-3K-HDY" id="mbA-G8-Ox8"/>
-                                    <outlet property="videoImage" destination="KpI-eU-mc0" id="8v8-cJ-hvg"/>
-                                    <outlet property="videoViews" destination="e8F-T9-gLY" id="eHu-AQ-eu5"/>
-                                    <outlet property="viewsImageView" destination="PLo-2j-cSk" id="VN4-Yj-OPe"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="thW-K3-90V" id="Tqy-r7-MWn"/>
-                            <outlet property="delegate" destination="thW-K3-90V" id="kwf-vw-fVH"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="XAFURDARIA" id="95d-7N-vUh">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="azB-hI-waY">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="iwG-wr-YIi">
-                                <rect key="frame" x="16" y="6" width="32" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="people.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="showMenu:" destination="thW-K3-90V" eventType="touchUpInside" id="vyi-z7-uoh"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <connections>
-                        <outlet property="tableView" destination="Of1-8A-RsX" id="Gjl-6X-HaS"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qwc-qk-jvu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="375" y="-115"/>
-        </scene>
         <!--New Video Table View Controller - XAFURDARIA-->
         <scene sceneID="TDv-ui-Zni">
             <objects>
@@ -216,21 +33,21 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="181"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTj-lT-9sw">
-                                                    <rect key="frame" x="234" y="194" width="68" height="21"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                                                    <rect key="frame" x="223" y="193" width="77" height="21"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIo-Lw-j1w">
-                                                    <rect key="frame" x="30" y="196" width="74" height="15"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                                                    <rect key="frame" x="27" y="197" width="74" height="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkN-eZ-cLS">
-                                                    <rect key="frame" x="128" y="194" width="65" height="21"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
-                                                    <color key="textColor" red="0.99607843139999996" green="0.76078431369999999" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <rect key="frame" x="128" y="192" width="65" height="21"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="calendar.png" translatesAutoresizingMaskIntoConstraints="NO" id="etf-jk-VV2">
@@ -240,7 +57,7 @@
                                                     <rect key="frame" x="112" y="198" width="13" height="13"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="eye.png" translatesAutoresizingMaskIntoConstraints="NO" id="L4E-89-t7c">
-                                                    <rect key="frame" x="211" y="198" width="13" height="13"/>
+                                                    <rect key="frame" x="205" y="198" width="13" height="13"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -285,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q2h-cg-EHV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="366" y="565"/>
+            <point key="canvasLocation" x="334" y="-115"/>
         </scene>
         <!--Side Menu Container View Controller-->
         <scene sceneID="Kxn-Ox-zYL">
@@ -420,9 +237,7 @@
         <image name="clock.png" width="26" height="26"/>
         <image name="eye.png" width="26" height="26"/>
         <image name="face.png" width="30" height="30"/>
-        <image name="gradient.png" width="1" height="50"/>
         <image name="people.png" width="32" height="32"/>
-        <image name="placeholder.jpeg" width="500" height="281"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

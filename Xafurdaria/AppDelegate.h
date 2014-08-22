@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import <CoreFoundation/CoreFoundation.h>
-#import <Appirater/Appirater.h>
+#import "iRate.h"
 
 #define kNewVideoNotification @"kNewVideoNotification"
 
-@interface AppDelegate : UIResponder <AppiraterDelegate,UIApplicationDelegate,AVAudioPlayerDelegate>
+@interface AppDelegate : UIResponder <iRateDelegate,UIApplicationDelegate,AVAudioPlayerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) NSString* lastVideo;

@@ -16,6 +16,7 @@
 @interface NewVideoTableViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,UIWebViewDelegate> {
     NSString *_nextPageToken;
     ODRefreshControl* _refreshControl;
+    UIImageView* _scrollImageView;
 }
 
 @property (strong, nonatomic) HudUtility* hudUtility;

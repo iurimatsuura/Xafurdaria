@@ -12,7 +12,6 @@
 #import "Item.h"
 #import "Video.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-#import "MainVideoCell.h"
 #import "Parent.h"
 #import <XCDYouTubeKit/XCDYouTubeKit.h>
 #import "BigTableViewCell.h"
@@ -20,9 +19,9 @@
 #import "Flurry.h"
 #import "UIViewController+ScrollingNavbar.h"
 #import <CBZSplashView/CBZSplashView.h>
-#import <AFNetworking.h>
-#import <AFNetworking/AFNetworking.h>
-#import <AFNetworking/AFHTTPClient.h>
+#import "Constants.h"
+#import <SystemConfiguration/SystemConfiguration.h>
+
 @interface NewVideoTableViewController ()
 
 @end
@@ -52,7 +51,7 @@
     [self.hudUtility setHUDPropertiesWithView:self.tableView];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(makeRequest2)
+                                             selector:@selector(makeRequestFromNotification)
                                                  name:kNewVideoNotification
                                                object:nil];
     
@@ -62,7 +61,7 @@
     [self.navigationController.navigationBar setTranslucent:NO];
     [self followScrollView:self.tableView];
     
-    [self createSplashView];
+    [self createSplashView];    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -132,7 +131,7 @@
     [self makeRequest];
 }
 
--(void)makeRequest2{
+-(void)makeRequestFromNotification{
     
     [self showActivityIndicator];
     
@@ -146,9 +145,12 @@
     
     RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:[Parent mapping] method:RKRequestMethodGET pathPattern:nil keyPath:@"" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
-    NSURL *url2 = [NSURL URLWithString:[NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/playlistItems?part=id,snippet,contentDetails&maxResults=10&playlistId=UU21wUP_bie85msUyT3eJnew&key=AIzaSyA7-TdCyHBVFoGvp2oixemxDX72a_C0Xcs&pageToken=%@",_nextPageToken]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url2];
+    NSURL *playlistItemsUrl = [NSURL URLWithString:[NSString stringWithFormat:kPlaylistItemsUrl,_nextPageToken]];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:playlistItemsUrl];
+    
     RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ responseDescriptor ]];
+    
     [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         
         Parent* rootJson = [mappingResult.array objectAtIndex:0];
@@ -164,6 +166,8 @@
             [self makeRequestWithVideoId:itemAux.contentDetails.videoId andPosition:[self.videoItems indexOfObject:itemAux]];
         }
         
+        [self hideScrollImage];
+        
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         RKLogError(@"Operation failed with error: %@", error);
         
@@ -175,6 +179,7 @@
         }
         [self dismissActivityIndicator];
         [_refreshControl endRefreshing];
+        [self showScrollImage];
     }];
     
     [objectRequestOperation start];
@@ -186,26 +191,29 @@
     
     RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:[Parent mapping] method:RKRequestMethodGET pathPattern:nil keyPath:@"" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
-    NSURL *url2 = [NSURL URLWithString:[NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/playlistItems?part=id,snippet,contentDetails&maxResults=10&playlistId=UU21wUP_bie85msUyT3eJnew&key=AIzaSyA7-TdCyHBVFoGvp2oixemxDX72a_C0Xcs&pageToken=%@",_nextPageToken]];
+    NSURL *url2 = [NSURL URLWithString:[NSString stringWithFormat:kPlaylistItemsUrl,_nextPageToken]];
+    
     NSURLRequest *request = [NSURLRequest requestWithURL:url2];
+    
     RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ responseDescriptor ]];
+    
     [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         
         Parent* rootJson = [mappingResult.array objectAtIndex:0];
         
-        if (_nextPageToken != rootJson.nextPageToken) {
-            _nextPageToken = rootJson.nextPageToken;
+        _nextPageToken = rootJson.nextPageToken;
+        
+        self.videoItems = [self.videoItems arrayByAddingObjectsFromArray:rootJson.items];
+        
+        for (Item* itemAux in rootJson.items) {
             
-            self.videoItems = [self.videoItems arrayByAddingObjectsFromArray:rootJson.items];
+            itemAux.video.videoId = itemAux.contentDetails.videoId;
             
-            for (Item* itemAux in rootJson.items) {
-                
-                itemAux.video.videoId = itemAux.contentDetails.videoId;
-                
-                [self makeRequestWithVideoId:itemAux.contentDetails.videoId andPosition:[self.videoItems indexOfObject:itemAux]];
-            }
+            [self makeRequestWithVideoId:itemAux.contentDetails.videoId andPosition:[self.videoItems indexOfObject:itemAux]];
         }
         
+        [self hideScrollImage];
+
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         RKLogError(@"Operation failed with error: %@", error);
         
@@ -217,6 +225,8 @@
         }
         [self dismissActivityIndicator];
         [_refreshControl endRefreshing];
+        
+        [self showScrollImage];
     }];
     
     [objectRequestOperation start];
@@ -227,7 +237,7 @@
     
     RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:[Video mapping] method:RKRequestMethodGET pathPattern:nil keyPath:@"items" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
-    NSURL *url2 = [NSURL URLWithString:[NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/videos?id=%@&part=snippet,contentDetails,statistics&fields=items&key=AIzaSyA7-TdCyHBVFoGvp2oixemxDX72a_C0Xcs",videoID]];
+    NSURL *url2 = [NSURL URLWithString:[NSString stringWithFormat:kVideoUrl,videoID]];
    
     NSURLRequest *request = [NSURLRequest requestWithURL:url2];
     
@@ -353,21 +363,21 @@
     [splashView startAnimation];
 }
 
--(void)connectionStatus
+-(void)showScrollImage
 {
-    RKObjectManager* manager = [RKObjectManager sharedManager];
-//    
-//    [manager.HTTPClient setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-//        if (status == AFNetworkReachabilityStatusNotReachable) {
-//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No network connection"
-//                                                            message:@"You must be connected to the internet to use this app."
-//                                                           delegate:nil
-//                                                  cancelButtonTitle:@"OK"
-//                                                  otherButtonTitles:nil];
-//            [alert show];
-//        }
-//    }];
+    if (!_scrollImageView) {
+        _scrollImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"scroll"]];
+    }
+    
+    _scrollImageView.frame = CGRectMake(0, 0, 128, 128);
+    _scrollImageView.center = self.tableView.center;
+    [self.tableView addSubview:_scrollImageView];
+    [self.tableView sendSubviewToBack:_scrollImageView];
+}
 
+-(void)hideScrollImage
+{
+    [_scrollImageView removeFromSuperview];
 }
 
 @end

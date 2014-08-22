@@ -14,6 +14,7 @@
 #import <RestKit/RestKit.h>
 #import "Parent.h"
 #import "Flurry.h"
+#import "Constants.h"
 
 @implementation AppDelegate
 
@@ -21,8 +22,8 @@
 {
     [self setCustomComponentProperties];
     [self configureSideMenu];
-    [self configureAppRiter];
     [self configureFlurry];
+    [self configureIRate];
     
     [self setLastVideoFromUserDefaults];
     [self makeRequest];
@@ -80,7 +81,7 @@
         updateLastVideo=UIBackgroundTaskInvalid;
     } ];
     
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:10*60
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:5*60
                                      target:self
                                    selector:@selector(makeRequest)
                                    userInfo:nil
@@ -90,7 +91,7 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-    [Appirater appEnteredForeground:YES];
+
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
@@ -125,7 +126,7 @@
         
     RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:[Parent mapping] method:RKRequestMethodGET pathPattern:nil keyPath:@"" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
-    NSURL *url2 = [NSURL URLWithString:[NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/playlistItems?part=id,snippet,contentDetails&maxResults=1&playlistId=UU21wUP_bie85msUyT3eJnew&key=AIzaSyA7-TdCyHBVFoGvp2oixemxDX72a_C0Xcs"]];
+    NSURL *url2 = [NSURL URLWithString:[NSString stringWithFormat:kAppDelegatePlaylistItemsUrl]];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url2];
     
@@ -137,8 +138,6 @@
         Item* lastPostedVideo = [rootJson.items objectAtIndex:0];
         NSString* lastVideoId = lastPostedVideo.contentDetails.videoId;
         
-        [self sendNotificationWithVideoName:lastPostedVideo.snippet.title];
-
         if (![self.lastVideo isEqualToString:lastVideoId]) {
             if (self.lastVideo) {
                 [self sendNotificationWithVideoName:lastPostedVideo.snippet.title];
@@ -181,35 +180,38 @@
     container.panMode = MFSideMenuPanModeCenterViewController;
 }
 
--(void)configureAppRiter
+-(void)configureIRate
 {
-    [Appirater setAppId:@"672131590"];
-    [Appirater setDaysUntilPrompt:3];
-    [Appirater setUsesUntilPrompt:5];
-    [Appirater setTimeBeforeReminding:1];
-    [Appirater setDebug:NO];
-    [Appirater appLaunched:YES];
-    [Appirater setDelegate:self];
+    [iRate sharedInstance].daysUntilPrompt = 5;
+    [iRate sharedInstance].usesUntilPrompt = 10;
+    [iRate sharedInstance].delegate = self;
+    [iRate sharedInstance].messageTitle = @"Olá,Xafurdeiro!";
+    [iRate sharedInstance].message = @"Que tal avaliar o app da Xafurdaria? Leva menos de 1 minuto!\nObrigado!";
+    [iRate sharedInstance].messageTitle = @"Olá,Xafurdeiro!";
+    [iRate sharedInstance].updateMessage = @"Que tal deixar outro feedback sobre o app da Xafurdaria? \nObrigado!";
+    [iRate sharedInstance].cancelButtonLabel = @"Não, Obrigado";
+    [iRate sharedInstance].rateButtonLabel = @"Avaliar";
+    [iRate sharedInstance].remindButtonLabel = @"Mais tarde";
 }
 
--(void)appiraterDidDisplayAlert:(Appirater *)appirater
+-(void)iRateDidPromptForRating
 {
     [Flurry logEvent:@"RateAlert_Displayed"];
 }
 
--(void)appiraterDidOptToRemindLater:(Appirater *)appirater
-{
-    [Flurry logEvent:@"RateAlert_RemindLater"];
-}
-
--(void)appiraterDidOptToRate:(Appirater *)appirater
+-(void)iRateUserDidAttemptToRateApp
 {
     [Flurry logEvent:@"RateAlert_Rated"];
 }
 
--(void)appiraterDidDeclineToRate:(Appirater *)appirater
+-(void)iRateUserDidDeclineToRateApp
 {
     [Flurry logEvent:@"RateAlert_DeclineRate"];
+}
+
+-(void)iRateUserDidRequestReminderToRateApp
+{
+    [Flurry logEvent:@"RateAlert_RemindLater"];
 }
 
 -(void)configureFlurry

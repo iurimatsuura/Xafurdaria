@@ -30,11 +30,8 @@
 		CA2A4A3D199FCF3100276BE9 /* libFlurry_5.2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA2A4A3C199FCF3100276BE9 /* libFlurry_5.2.0.a */; };
 		CA2A4A3F199FCF5100276BE9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA2A4A3E199FCF5100276BE9 /* SystemConfiguration.framework */; };
 		CA370BF5199D58F600AFDACE /* ImageHigh.m in Sources */ = {isa = PBXBuildFile; fileRef = CA370BF4199D58F600AFDACE /* ImageHigh.m */; };
-		CA370BF7199D5C1C00AFDACE /* maxresdefault.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CA370BF6199D5C1C00AFDACE /* maxresdefault.jpg */; };
 		CA370BF9199D641700AFDACE /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = CA370BF8199D641700AFDACE /* calendar.png */; };
 		CA370BFC199D64DD00AFDACE /* NewVideoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA370BFB199D64DD00AFDACE /* NewVideoTableViewController.m */; };
-		CA3FFA36195D7EB00018D2E8 /* MainVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3FFA35195D7EB00018D2E8 /* MainVideoViewController.m */; };
-		CA3FFA39195D7F370018D2E8 /* MainVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3FFA38195D7F370018D2E8 /* MainVideoCell.m */; };
 		CA64BE43195C9EE80030A555 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = CA64BE40195C9EE80030A555 /* Item.m */; };
 		CA64BE44195C9EE80030A555 /* ContentDetailsFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = CA64BE42195C9EE80030A555 /* ContentDetailsFirst.m */; };
 		CA64BE52195C9F020030A555 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = CA64BE47195C9F020030A555 /* Video.m */; };
@@ -43,7 +40,6 @@
 		CA64BE55195C9F020030A555 /* Statistics.m in Sources */ = {isa = PBXBuildFile; fileRef = CA64BE4D195C9F020030A555 /* Statistics.m */; };
 		CA64BE56195C9F020030A555 /* Thumbnail.m in Sources */ = {isa = PBXBuildFile; fileRef = CA64BE4F195C9F020030A555 /* Thumbnail.m */; };
 		CA64BE57195C9F020030A555 /* ImageMedium.m in Sources */ = {isa = PBXBuildFile; fileRef = CA64BE51195C9F020030A555 /* ImageMedium.m */; };
-		CA64BE59195CA0E40030A555 /* placeholder.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CA64BE58195CA0E40030A555 /* placeholder.jpeg */; };
 		CA64BE62195CA3860030A555 /* libPods-Xafurdaria.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA64BE61195CA3860030A555 /* libPods-Xafurdaria.a */; };
 		CA64BE65195CA5400030A555 /* eye.png in Resources */ = {isa = PBXBuildFile; fileRef = CA64BE63195CA5400030A555 /* eye.png */; };
 		CA64BE66195CA5400030A555 /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = CA64BE64195CA5400030A555 /* clock.png */; };
@@ -68,6 +64,8 @@
 		CA70E675199ED95700FE980D /* moa@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA70E673199ED95700FE980D /* moa@2x.png */; };
 		CA70E678199EDA0000FE980D /* saulo.png in Resources */ = {isa = PBXBuildFile; fileRef = CA70E676199EDA0000FE980D /* saulo.png */; };
 		CA70E679199EDA0000FE980D /* saulo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA70E677199EDA0000FE980D /* saulo@2x.png */; };
+		CA83053F19A2A419002EF1F8 /* scroll@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA83053D19A2A419002EF1F8 /* scroll@2x.png */; };
+		CA83054019A2A419002EF1F8 /* scroll.png in Resources */ = {isa = PBXBuildFile; fileRef = CA83053E19A2A419002EF1F8 /* scroll.png */; };
 		CAB56D4C195E39380061CDB1 /* Parent.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB56D4B195E39380061CDB1 /* Parent.m */; };
 		CABC851419A12D3F00A04C9C /* xafurdaria_logo_splash.png in Resources */ = {isa = PBXBuildFile; fileRef = CABC851319A12D3F00A04C9C /* xafurdaria_logo_splash.png */; };
 		CAC95C03199EA4F0007A5EDE /* BigTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC95C02199EA4F0007A5EDE /* BigTableViewCell.m */; };
@@ -76,6 +74,8 @@
 		CAC95C09199EB825007A5EDE /* logo80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC95C08199EB825007A5EDE /* logo80x80.png */; };
 		CAC95C0B199EB890007A5EDE /* logo58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC95C0A199EB890007A5EDE /* logo58x58.png */; };
 		CAC95C0D199EBA0E007A5EDE /* Xafurdaria960.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC95C0C199EBA0E007A5EDE /* Xafurdaria960.png */; };
+		CAF9CC7B19A6962A0091081A /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF9CC7919A6962A0091081A /* iRate.m */; };
+		CAF9CC7C19A6962A0091081A /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CAF9CC7A19A6962A0091081A /* iRate.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,14 +112,9 @@
 		CA2A4A3E199FCF5100276BE9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		CA370BF3199D58F600AFDACE /* ImageHigh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageHigh.h; sourceTree = "<group>"; };
 		CA370BF4199D58F600AFDACE /* ImageHigh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageHigh.m; sourceTree = "<group>"; };
-		CA370BF6199D5C1C00AFDACE /* maxresdefault.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = maxresdefault.jpg; sourceTree = "<group>"; };
 		CA370BF8199D641700AFDACE /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
 		CA370BFA199D64DD00AFDACE /* NewVideoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewVideoTableViewController.h; sourceTree = "<group>"; };
 		CA370BFB199D64DD00AFDACE /* NewVideoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewVideoTableViewController.m; sourceTree = "<group>"; };
-		CA3FFA34195D7EB00018D2E8 /* MainVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainVideoViewController.h; sourceTree = "<group>"; };
-		CA3FFA35195D7EB00018D2E8 /* MainVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainVideoViewController.m; sourceTree = "<group>"; };
-		CA3FFA37195D7F370018D2E8 /* MainVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainVideoCell.h; sourceTree = "<group>"; };
-		CA3FFA38195D7F370018D2E8 /* MainVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainVideoCell.m; sourceTree = "<group>"; };
 		CA64BE3C195C9BC50030A555 /* libPods-Xafurdaria.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Xafurdaria.a"; path = "Pods/build/Debug-iphoneos/libPods-Xafurdaria.a"; sourceTree = "<group>"; };
 		CA64BE3F195C9EE80030A555 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
 		CA64BE40195C9EE80030A555 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
@@ -137,7 +132,6 @@
 		CA64BE4F195C9F020030A555 /* Thumbnail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Thumbnail.m; sourceTree = "<group>"; };
 		CA64BE50195C9F020030A555 /* ImageMedium.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageMedium.h; sourceTree = "<group>"; };
 		CA64BE51195C9F020030A555 /* ImageMedium.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageMedium.m; sourceTree = "<group>"; };
-		CA64BE58195CA0E40030A555 /* placeholder.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder.jpeg; sourceTree = "<group>"; };
 		CA64BE5F195CA37B0030A555 /* libPods-Xafurdaria-RestKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Xafurdaria-RestKit.a"; path = "Pods/build/Debug-iphoneos/libPods-Xafurdaria-RestKit.a"; sourceTree = "<group>"; };
 		CA64BE61195CA3860030A555 /* libPods-Xafurdaria.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Xafurdaria.a"; path = "Pods/build/Debug-iphoneos/libPods-Xafurdaria.a"; sourceTree = "<group>"; };
 		CA64BE63195CA5400030A555 /* eye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye.png; sourceTree = "<group>"; };
@@ -165,6 +159,9 @@
 		CA70E673199ED95700FE980D /* moa@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moa@2x.png"; sourceTree = "<group>"; };
 		CA70E676199EDA0000FE980D /* saulo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = saulo.png; sourceTree = "<group>"; };
 		CA70E677199EDA0000FE980D /* saulo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "saulo@2x.png"; sourceTree = "<group>"; };
+		CA83053C19A298E8002EF1F8 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		CA83053D19A2A419002EF1F8 /* scroll@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scroll@2x.png"; sourceTree = "<group>"; };
+		CA83053E19A2A419002EF1F8 /* scroll.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scroll.png; sourceTree = "<group>"; };
 		CAA7051F195D922B00325814 /* libPods-Xafurdaria-XCDYouTubeKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Xafurdaria-XCDYouTubeKit.a"; path = "Pods/build/Debug-iphoneos/libPods-Xafurdaria-XCDYouTubeKit.a"; sourceTree = "<group>"; };
 		CAB56D4A195E39380061CDB1 /* Parent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parent.h; sourceTree = "<group>"; };
 		CAB56D4B195E39380061CDB1 /* Parent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parent.m; sourceTree = "<group>"; };
@@ -176,6 +173,9 @@
 		CAC95C08199EB825007A5EDE /* logo80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo80x80.png; sourceTree = "<group>"; };
 		CAC95C0A199EB890007A5EDE /* logo58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo58x58.png; sourceTree = "<group>"; };
 		CAC95C0C199EBA0E007A5EDE /* Xafurdaria960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Xafurdaria960.png; sourceTree = "<group>"; };
+		CAF9CC7819A6962A0091081A /* iRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRate.h; sourceTree = "<group>"; };
+		CAF9CC7919A6962A0091081A /* iRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRate.m; sourceTree = "<group>"; };
+		CAF9CC7A19A6962A0091081A /* iRate.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = iRate.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,8 +203,6 @@
 			isa = PBXGroup;
 			children = (
 				8441E12A178A255500C45088 /* Views */,
-				CA3FFA34195D7EB00018D2E8 /* MainVideoViewController.h */,
-				CA3FFA35195D7EB00018D2E8 /* MainVideoViewController.m */,
 				CA086ECB1968A8E500F77FB5 /* MyNavigationViewController.h */,
 				CA086ECC1968A8E500F77FB5 /* MyNavigationViewController.m */,
 				CA370BFA199D64DD00AFDACE /* NewVideoTableViewController.h */,
@@ -230,8 +228,6 @@
 			children = (
 				CA70E645199EC0DB00FE980D /* SocialCell.h */,
 				CA70E646199EC0DB00FE980D /* SocialCell.m */,
-				CA3FFA37195D7F370018D2E8 /* MainVideoCell.h */,
-				CA3FFA38195D7F370018D2E8 /* MainVideoCell.m */,
 				CAC95C01199EA4F0007A5EDE /* BigTableViewCell.h */,
 				CAC95C02199EA4F0007A5EDE /* BigTableViewCell.m */,
 			);
@@ -302,6 +298,7 @@
 				8490489C1787ACC900418F8E /* Default.png */,
 				8490489E1787ACC900418F8E /* Default@2x.png */,
 				849048A01787ACC900418F8E /* Default-568h@2x.png */,
+				CA83053C19A298E8002EF1F8 /* Constants.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -309,6 +306,8 @@
 		849048BF1787ADF600418F8E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CA83053D19A2A419002EF1F8 /* scroll@2x.png */,
+				CA83053E19A2A419002EF1F8 /* scroll.png */,
 				CABC851319A12D3F00A04C9C /* xafurdaria_logo_splash.png */,
 				CA70E662199ED73000FE980D /* twitter@2x.png */,
 				CA70E663199ED73000FE980D /* twitter.png */,
@@ -333,11 +332,9 @@
 				CAC95C08199EB825007A5EDE /* logo80x80.png */,
 				CAC95C04199EB79C007A5EDE /* Xafurdaria1136.png */,
 				CA370BF8199D641700AFDACE /* calendar.png */,
-				CA370BF6199D5C1C00AFDACE /* maxresdefault.jpg */,
 				CA086ECE1968CC0800F77FB5 /* logo.png */,
 				CA64BE63195CA5400030A555 /* eye.png */,
 				CA64BE64195CA5400030A555 /* clock.png */,
-				CA64BE58195CA0E40030A555 /* placeholder.jpeg */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -354,6 +351,7 @@
 		84C280D0178B9A5600455C98 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				CAF9CC7719A6961C0091081A /* iRate */,
 				CA2A4A3A199FCF1E00276BE9 /* Flurry */,
 				84C280D9178B9B2900455C98 /* Helpers */,
 				84C280D1178B9AAD00455C98 /* MBProgressHUD */,
@@ -420,6 +418,16 @@
 				CA64BE51195C9F020030A555 /* ImageMedium.m */,
 			);
 			name = "Seconde Request";
+			sourceTree = "<group>";
+		};
+		CAF9CC7719A6961C0091081A /* iRate */ = {
+			isa = PBXGroup;
+			children = (
+				CAF9CC7819A6962A0091081A /* iRate.h */,
+				CAF9CC7919A6962A0091081A /* iRate.m */,
+				CAF9CC7A19A6962A0091081A /* iRate.bundle */,
+			);
+			name = iRate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -492,8 +500,6 @@
 				CA086ECF1968CC0800F77FB5 /* logo.png in Resources */,
 				CA70E654199ED0D500FE980D /* leonan.png in Resources */,
 				CA70E678199EDA0000FE980D /* saulo.png in Resources */,
-				CA370BF7199D5C1C00AFDACE /* maxresdefault.jpg in Resources */,
-				CA64BE59195CA0E40030A555 /* placeholder.jpeg in Resources */,
 				CA70E66D199ED73000FE980D /* insta.png in Resources */,
 				CA70E661199ED2DC00FE980D /* kaio@2x.png in Resources */,
 				CA70E66A199ED73000FE980D /* face@2x.png in Resources */,
@@ -501,6 +507,7 @@
 				CA70E668199ED73000FE980D /* twitter@2x.png in Resources */,
 				8490489F1787ACC900418F8E /* Default@2x.png in Resources */,
 				CA70E651199ED06E00FE980D /* enderson@2x.png in Resources */,
+				CA83053F19A2A419002EF1F8 /* scroll@2x.png in Resources */,
 				CABC851419A12D3F00A04C9C /* xafurdaria_logo_splash.png in Resources */,
 				CAC95C09199EB825007A5EDE /* logo80x80.png in Resources */,
 				CA70E674199ED95700FE980D /* moa.png in Resources */,
@@ -510,9 +517,11 @@
 				CAC95C0D199EBA0E007A5EDE /* Xafurdaria960.png in Resources */,
 				CA70E66C199ED73000FE980D /* insta@2x.png in Resources */,
 				849048A41787ACC900418F8E /* MainStoryboard_iPhone.storyboard in Resources */,
+				CA83054019A2A419002EF1F8 /* scroll.png in Resources */,
 				CA64BE65195CA5400030A555 /* eye.png in Resources */,
 				CA70E64A199EC22F00FE980D /* people.png in Resources */,
 				84C280D7178B9ACD00455C98 /* 37x-Checkmark.png in Resources */,
+				CAF9CC7C19A6962A0091081A /* iRate.bundle in Resources */,
 				CA70E669199ED73000FE980D /* twitter.png in Resources */,
 				CAC95C05199EB79C007A5EDE /* Xafurdaria1136.png in Resources */,
 				84C280D8178B9ACD00455C98 /* 37x-Checkmark@2x.png in Resources */,
@@ -569,13 +578,12 @@
 				CA64BE55195C9F020030A555 /* Statistics.m in Sources */,
 				CA64BE56195C9F020030A555 /* Thumbnail.m in Sources */,
 				CAC95C03199EA4F0007A5EDE /* BigTableViewCell.m in Sources */,
+				CAF9CC7B19A6962A0091081A /* iRate.m in Sources */,
 				CA370BFC199D64DD00AFDACE /* NewVideoTableViewController.m in Sources */,
-				CA3FFA39195D7F370018D2E8 /* MainVideoCell.m in Sources */,
 				CAB56D4C195E39380061CDB1 /* Parent.m in Sources */,
 				CA70E647199EC0DB00FE980D /* SocialCell.m in Sources */,
 				CA64BE52195C9F020030A555 /* Video.m in Sources */,
 				CA370BF5199D58F600AFDACE /* ImageHigh.m in Sources */,
-				CA3FFA36195D7EB00018D2E8 /* MainVideoViewController.m in Sources */,
 				CA64BE54195C9F020030A555 /* ContentDetailsVideo.m in Sources */,
 				CA6A3857199EBD4700D176E6 /* LeftSideViewController.m in Sources */,
 				84C280DC178B9B3700455C98 /* HudUtility.m in Sources */,
