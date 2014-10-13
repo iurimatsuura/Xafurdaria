@@ -46,7 +46,6 @@
         }
     }
     
-//    NSLog(@"%@", [NSString stringWithFormat:@"%d days, %d hours, %d mins, %d seconds", days, hours, minutes, seconds]);
     if (hours != 0) {
         return [NSString stringWithFormat:@"%d:%01d:%01d", hours, minutes, seconds];
 

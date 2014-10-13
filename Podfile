@@ -10,7 +10,6 @@ pod 'RestKit'
 pod 'ODRefreshControl'
 pod 'SDWebImage'
 pod 'XCDYouTubeKit'
-pod 'Appirater'
 pod 'AMScrollingNavbar'
 pod 'CBZSplashView', '~> 1.0.0'
 end

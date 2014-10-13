@@ -183,7 +183,7 @@
 -(void)configureIRate
 {
     [iRate sharedInstance].daysUntilPrompt = 5;
-    [iRate sharedInstance].usesUntilPrompt = 10;
+    [iRate sharedInstance].usesUntilPrompt = 7;
     [iRate sharedInstance].delegate = self;
     [iRate sharedInstance].messageTitle = @"Olá,Xafurdeiro!";
     [iRate sharedInstance].message = @"Que tal avaliar o app da Xafurdaria? Leva menos de 1 minuto!\nObrigado!";

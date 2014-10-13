@@ -10,29 +10,29 @@
 	<string>Xafurdaria</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>98A7638E-F9F8-48C8-B9AD-00CA9B67102E</key>
+		<key>FCA6D5075B0077DE02FE2A29017FE54E89CEAD50</key>
 		<string>https://bitbucket.org/iurism/xafurdaria.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Xafurdaria.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>98A7638E-F9F8-48C8-B9AD-00CA9B67102E</key>
+		<key>FCA6D5075B0077DE02FE2A29017FE54E89CEAD50</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://bitbucket.org/iurism/xafurdaria.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>98A7638E-F9F8-48C8-B9AD-00CA9B67102E</string>
+	<string>FCA6D5075B0077DE02FE2A29017FE54E89CEAD50</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>98A7638E-F9F8-48C8-B9AD-00CA9B67102E</string>
+			<string>FCA6D5075B0077DE02FE2A29017FE54E89CEAD50</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Xafurdaria</string>
 		</dict>

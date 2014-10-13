@@ -48,10 +48,6 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-## Appirater
-
-Copyright 2013. Arash Payan. This library is distributed under the terms of the MIT/X11.
-
 ## CBZSplashView
 
 Copyright (c) 2014 Callum Boddy <callum.boddy@gmail.com>

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "30A1B4239A9A4ED5ABA177D9"
+               BlueprintIdentifier = "8535590B66F84F90A950F169"
                BuildableName = "libPods-Xafurdaria-TTTAttributedLabel.a"
                BlueprintName = "Pods-Xafurdaria-TTTAttributedLabel"
                ReferencedContainer = "container:Pods.xcodeproj">

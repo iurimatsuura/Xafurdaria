@@ -13,7 +13,7 @@
 
 +(RKObjectMapping*)mapping{
     
-    RKObjectMapping* snippetMapping = [RKObjectMapping mappingForClass:[Snippet class           ]];
+    RKObjectMapping* snippetMapping = [RKObjectMapping mappingForClass:[Snippet class]];
     
     [snippetMapping addAttributeMappingsFromArray:@[ @"title",@"publishedAt"]];
     

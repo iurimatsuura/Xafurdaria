@@ -4,22 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Appirater.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-Xafurdaria-AFNetworking.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-Xafurdaria-AMScrollingNavbar.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-Xafurdaria-Appirater.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -82,77 +72,67 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>01BB4BAF51B74E22813E3DE0</key>
+		<key>2C997D2311CB4D27A13A250A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>12458899CF644108BBA099ED</key>
+		<key>3354BF3B38514998A9E86A85</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>30A1B4239A9A4ED5ABA177D9</key>
+		<key>3B17864200DA4915B3F98766</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>383CA7EB6EF44E979EC84FE0</key>
+		<key>7D057BC147B240C49D3E6000</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>39EF4C2170C948FEA2E0C5B8</key>
+		<key>8535590B66F84F90A950F169</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>536071327FBD414087C8BA80</key>
+		<key>91937850383F4F16ADB8EE38</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5D6F1C4EAA1D493C9868245C</key>
+		<key>94DB0E70D89D4168B37565D0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>606099EFD33A4FF18F00425B</key>
+		<key>9CDA23E033A24C0BB88F5D0E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6EBD9E3A6B2B432E95B57454</key>
+		<key>9D234CE8653A43D7A2938846</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6EF272567E6E435AAC46A70D</key>
+		<key>BAE517E47EC4472681614088</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9A5E334C15A1403F897F900D</key>
+		<key>DE6E085BF2C04E69BFB1B460</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B18B8AD77F4A471DBEF3420F</key>
+		<key>EEE7A4C613D04D03B8C24124</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C4A2415D8AA94DD3807CC9AD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CA4008AD07944597B0696BBD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F78A3B904782473FAAA73B7F</key>
+		<key>FA8E6153A50F43B8A518857A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

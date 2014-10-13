@@ -18,12 +18,6 @@
 #define COCOAPODS_VERSION_MINOR_AMScrollingNavbar 0
 #define COCOAPODS_VERSION_PATCH_AMScrollingNavbar 1
 
-// Appirater
-#define COCOAPODS_POD_AVAILABLE_Appirater
-#define COCOAPODS_VERSION_MAJOR_Appirater 2
-#define COCOAPODS_VERSION_MINOR_Appirater 0
-#define COCOAPODS_VERSION_PATCH_Appirater 2
-
 // CBZSplashView
 #define COCOAPODS_POD_AVAILABLE_CBZSplashView
 #define COCOAPODS_VERSION_MAJOR_CBZSplashView 1
