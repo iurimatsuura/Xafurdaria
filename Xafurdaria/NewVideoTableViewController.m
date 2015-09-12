@@ -297,7 +297,7 @@
         cell.videoName.text = item.snippet.title;
         cell.videoDuration.text = [item.video.contentDetails correctDuration];
         cell.videoViews.text = [self formatNumber:item.video.statistics.viewCount];
-        [cell.videoImage setImageWithURL:[NSURL URLWithString:item.snippet.thumbnails.high.url] placeholderImage:nil];
+        [cell.videoImage setImageWithURL:[NSURL URLWithString:item.snippet.thumbnails.medium.url] placeholderImage:nil];
         cell.dateLabel.text = [self formatDateString:item.snippet.publishedAt];
         
         [cell.contentView bringSubviewToFront:cell.videoImage];
@@ -355,7 +355,7 @@
 {
     UIImage *icon = [UIImage imageNamed:@"xafurdaria_logo_splash"];
     UIColor *color = [UIColor colorWithRed:0.996 green:0.761 blue:0.047 alpha:1.000];
-    CBZSplashView *splashView = [[CBZSplashView alloc]initWithIcon:icon backgroundColor:color];
+    CBZSplashView *splashView = [CBZSplashView splashViewWithIcon:icon backgroundColor:color];
     splashView.animationDuration = 3.0;
     splashView.iconStartSize = CGSizeMake(180, 180);
     

@@ -5,26 +5,39 @@
 [![License](https://img.shields.io/cocoapods/l/CBZSplashView.svg?style=flat)](http://cocoadocs.org/docsets/CBZSplashView)
 [![Platform](https://img.shields.io/cocoapods/p/CBZSplashView.svg?style=flat)](http://cocoadocs.org/docsets/CBZSplashView)
 
-
-## CBZSplashView
+<img src="Images/CBZLogo.png" height="28%" width="28%" />
 
 Inspired by the Twitter Splash screen.
 
 Create a splash view not dissimilar to the one Twitter use.
 
-just drop in your logo and choose a background color and you are ready to go.
+Just drop in your raster/vector logo and choose a background color and you are ready to go.
 
 I have also added some customization options if you are that way inclined.
 
 Twitter: <a href="https://twitter.com/callumboddy">@callumboddy</a>
 
-<img src="Images/twitterGif.gif"/>
+<img src="Images/twitter-gif.gif"/>
 
 Easy as pie:
-```objective-c
+
++ Using a rasterized image:
+```objc
   UIImage *icon = [UIImage imageNamed:kMyIcon];
   UIColor *color = [UIColor colorWithHexString:kMyColor];
-  CBZSplashView *splashView = [[CBZSplashView alloc] initWithIcon:icon backgroundColor:color];
+  CBZSplashView *splashView = [CBZSplashView splashViewWithIcon:icon backgroundColor:color];
+  
+  // customize duration, icon size, or icon color here;
+  
+  [self.view addSubview:splashView];
+  [splashView startAnimation];
+```
+
++ Using a vector image:
+```objc
+  UIBezierPath *icon = [UIBezierPath myIcon]; // Generate path from vector using something like paintCode
+  UIColor *color = [UIColor colorWithHexString:kMyColor];
+  CBZSplashView *splashView = [CBZSplashView splashViewWithBezierPath:icon backgroundColor:color];
   
   // customize duration, icon size, or icon color here;
   
@@ -45,21 +58,26 @@ or you can animate on completion if you want to..
 CBZSplashView is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-    pod 'CBZSplashView', '~> 0.1.1'
+    pod 'CBZSplashView', '~> 1.0.0'
 
 
 ## Coming Soon
 
 - creating new and unique transitions to select from
-- a vector based implementation, closer to the twitter implementation
 - adding support for a background image.
 - adding support for colorWithPatternImage
 
+- ~~a vector based implementation, closer to the twitter implementation~~
+
 - If you would like to request a new feature, feel free to raise as an issue. 
 
-Thanks to <a href="https://twitter.com/Mazyod">@Mazyod</a> for some great ideas and contributions.
-
 ## Updates
+
+1.0.0
+- feature: full support for bezier paths - which is awesome. Massive thanks to <a href="https://twitter.com/Mazyod">@Mazyod</a>
+- cleanliness
+- bugfixes
+
 
 0.1.1:
 - feature: added propery to manipulate the icon size, eg. splashView.iconStartSize = CGSizeMake(200, 200);

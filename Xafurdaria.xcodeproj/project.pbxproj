@@ -79,8 +79,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0EDEC2B95B4D48AA8B7F3451 /* Pods-Xafurdaria.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xafurdaria.xcconfig"; path = "Pods/Pods-Xafurdaria.xcconfig"; sourceTree = "<group>"; };
+		06D7CF809C61AAF657A1D206 /* Pods-Xafurdaria.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xafurdaria.release.xcconfig"; path = "Pods/Target Support Files/Pods-Xafurdaria/Pods-Xafurdaria.release.xcconfig"; sourceTree = "<group>"; };
 		10AA9E6DA265403BAC987554 /* libPods-Xafurdaria.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Xafurdaria.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		34450E096064B3474904DCDE /* Pods-Xafurdaria.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xafurdaria.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Xafurdaria/Pods-Xafurdaria.debug.xcconfig"; sourceTree = "<group>"; };
 		8441E112178A0CB500C45088 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		8441E118178A12CB00C45088 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		849048871787ACC900418F8E /* Xafurdaria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xafurdaria.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,6 +200,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00CC48101F9793210DD9C1FD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				34450E096064B3474904DCDE /* Pods-Xafurdaria.debug.xcconfig */,
+				06D7CF809C61AAF657A1D206 /* Pods-Xafurdaria.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8441E110178A0BF900C45088 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,7 +250,7 @@
 				849048901787ACC900418F8E /* Xafurdaria */,
 				849048891787ACC900418F8E /* Frameworks */,
 				849048881787ACC900418F8E /* Products */,
-				0EDEC2B95B4D48AA8B7F3451 /* Pods-Xafurdaria.xcconfig */,
+				00CC48101F9793210DD9C1FD /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -561,7 +571,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-Xafurdaria-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Xafurdaria/Pods-Xafurdaria-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -675,7 +685,7 @@
 		};
 		849048B91787ACC900418F8E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0EDEC2B95B4D48AA8B7F3451 /* Pods-Xafurdaria.xcconfig */;
+			baseConfigurationReference = 34450E096064B3474904DCDE /* Pods-Xafurdaria.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -696,7 +706,7 @@
 		};
 		849048BA1787ACC900418F8E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0EDEC2B95B4D48AA8B7F3451 /* Pods-Xafurdaria.xcconfig */;
+			baseConfigurationReference = 06D7CF809C61AAF657A1D206 /* Pods-Xafurdaria.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
