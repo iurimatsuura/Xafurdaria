@@ -25,6 +25,10 @@
 		84C280D8178B9ACD00455C98 /* 37x-Checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C280D6178B9ACD00455C98 /* 37x-Checkmark@2x.png */; };
 		84C280DC178B9B3700455C98 /* HudUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C280DB178B9B3700455C98 /* HudUtility.m */; };
 		84EEEA2A178E401E00D6CF6E /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84EEEA29178E401E00D6CF6E /* MediaPlayer.framework */; };
+		8CE35EDA1BA4CEE800B5D63B /* VideoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE35ED91BA4CEE800B5D63B /* VideoCollectionViewController.m */; };
+		8CE35EDD1BA4CF4100B5D63B /* VideoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE35EDC1BA4CF4100B5D63B /* VideoCollectionViewCell.m */; };
+		8CE35EE11BA4D5B500B5D63B /* NSString+Formatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE35EE01BA4D5B500B5D63B /* NSString+Formatter.m */; };
+		8CE35EE41BA4DE2100B5D63B /* SpinnerFooterReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE35EE31BA4DE2100B5D63B /* SpinnerFooterReusableView.m */; };
 		CA086ECD1968A8E500F77FB5 /* MyNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA086ECC1968A8E500F77FB5 /* MyNavigationViewController.m */; };
 		CA086ECF1968CC0800F77FB5 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = CA086ECE1968CC0800F77FB5 /* logo.png */; };
 		CA2A4A3D199FCF3100276BE9 /* libFlurry_5.2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA2A4A3C199FCF3100276BE9 /* libFlurry_5.2.0.a */; };
@@ -105,6 +109,14 @@
 		84C280DA178B9B3700455C98 /* HudUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HudUtility.h; sourceTree = "<group>"; };
 		84C280DB178B9B3700455C98 /* HudUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HudUtility.m; sourceTree = "<group>"; };
 		84EEEA29178E401E00D6CF6E /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		8CE35ED81BA4CEE800B5D63B /* VideoCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCollectionViewController.h; sourceTree = "<group>"; };
+		8CE35ED91BA4CEE800B5D63B /* VideoCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCollectionViewController.m; sourceTree = "<group>"; };
+		8CE35EDB1BA4CF4100B5D63B /* VideoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCollectionViewCell.h; sourceTree = "<group>"; };
+		8CE35EDC1BA4CF4100B5D63B /* VideoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCollectionViewCell.m; sourceTree = "<group>"; };
+		8CE35EDF1BA4D5B500B5D63B /* NSString+Formatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Formatter.h"; sourceTree = "<group>"; };
+		8CE35EE01BA4D5B500B5D63B /* NSString+Formatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Formatter.m"; sourceTree = "<group>"; };
+		8CE35EE21BA4DE2100B5D63B /* SpinnerFooterReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpinnerFooterReusableView.h; sourceTree = "<group>"; };
+		8CE35EE31BA4DE2100B5D63B /* SpinnerFooterReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpinnerFooterReusableView.m; sourceTree = "<group>"; };
 		CA086ECB1968A8E500F77FB5 /* MyNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavigationViewController.h; sourceTree = "<group>"; };
 		CA086ECC1968A8E500F77FB5 /* MyNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavigationViewController.m; sourceTree = "<group>"; };
 		CA086ECE1968CC0800F77FB5 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
@@ -219,6 +231,8 @@
 				CA370BFB199D64DD00AFDACE /* NewVideoTableViewController.m */,
 				CA6A3855199EBD4700D176E6 /* LeftSideViewController.h */,
 				CA6A3856199EBD4700D176E6 /* LeftSideViewController.m */,
+				8CE35ED81BA4CEE800B5D63B /* VideoCollectionViewController.h */,
+				8CE35ED91BA4CEE800B5D63B /* VideoCollectionViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -240,6 +254,10 @@
 				CA70E646199EC0DB00FE980D /* SocialCell.m */,
 				CAC95C01199EA4F0007A5EDE /* BigTableViewCell.h */,
 				CAC95C02199EA4F0007A5EDE /* BigTableViewCell.m */,
+				8CE35EDB1BA4CF4100B5D63B /* VideoCollectionViewCell.h */,
+				8CE35EDC1BA4CF4100B5D63B /* VideoCollectionViewCell.m */,
+				8CE35EE21BA4DE2100B5D63B /* SpinnerFooterReusableView.h */,
+				8CE35EE31BA4DE2100B5D63B /* SpinnerFooterReusableView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -285,6 +303,7 @@
 		849048901787ACC900418F8E /* Xafurdaria */ = {
 			isa = PBXGroup;
 			children = (
+				8CE35EDE1BA4D59600B5D63B /* Utils */,
 				84C280D0178B9A5600455C98 /* Libs */,
 				84C280BF178B0C4100455C98 /* Models */,
 				8441E111178A0C0D00C45088 /* AppDelegate & Storyboard */,
@@ -385,6 +404,15 @@
 				84C280DB178B9B3700455C98 /* HudUtility.m */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		8CE35EDE1BA4D59600B5D63B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8CE35EDF1BA4D5B500B5D63B /* NSString+Formatter.h */,
+				8CE35EE01BA4D5B500B5D63B /* NSString+Formatter.m */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		CA2A4A3A199FCF1E00276BE9 /* Flurry */ = {
@@ -586,13 +614,16 @@
 				8490489B1787ACC900418F8E /* AppDelegate.m in Sources */,
 				CA64BE44195C9EE80030A555 /* ContentDetailsFirst.m in Sources */,
 				CA64BE55195C9F020030A555 /* Statistics.m in Sources */,
+				8CE35EE41BA4DE2100B5D63B /* SpinnerFooterReusableView.m in Sources */,
 				CA64BE56195C9F020030A555 /* Thumbnail.m in Sources */,
 				CAC95C03199EA4F0007A5EDE /* BigTableViewCell.m in Sources */,
 				CAF9CC7B19A6962A0091081A /* iRate.m in Sources */,
+				8CE35EE11BA4D5B500B5D63B /* NSString+Formatter.m in Sources */,
 				CA370BFC199D64DD00AFDACE /* NewVideoTableViewController.m in Sources */,
 				CAB56D4C195E39380061CDB1 /* Parent.m in Sources */,
 				CA70E647199EC0DB00FE980D /* SocialCell.m in Sources */,
 				CA64BE52195C9F020030A555 /* Video.m in Sources */,
+				8CE35EDA1BA4CEE800B5D63B /* VideoCollectionViewController.m in Sources */,
 				CA370BF5199D58F600AFDACE /* ImageHigh.m in Sources */,
 				CA64BE54195C9F020030A555 /* ContentDetailsVideo.m in Sources */,
 				CA6A3857199EBD4700D176E6 /* LeftSideViewController.m in Sources */,
@@ -600,6 +631,7 @@
 				CA086ECD1968A8E500F77FB5 /* MyNavigationViewController.m in Sources */,
 				CA64BE43195C9EE80030A555 /* Item.m in Sources */,
 				CA64BE53195C9F020030A555 /* Snippet.m in Sources */,
+				8CE35EDD1BA4CF4100B5D63B /* VideoCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
