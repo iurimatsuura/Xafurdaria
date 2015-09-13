@@ -29,6 +29,7 @@
 		8CE35EDD1BA4CF4100B5D63B /* VideoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE35EDC1BA4CF4100B5D63B /* VideoCollectionViewCell.m */; };
 		8CE35EE11BA4D5B500B5D63B /* NSString+Formatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE35EE01BA4D5B500B5D63B /* NSString+Formatter.m */; };
 		8CE35EE41BA4DE2100B5D63B /* SpinnerFooterReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE35EE31BA4DE2100B5D63B /* SpinnerFooterReusableView.m */; };
+		8CF234F51BA5989600ABC54D /* GridCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF234F41BA5989600ABC54D /* GridCollectionViewLayout.m */; };
 		CA086ECD1968A8E500F77FB5 /* MyNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA086ECC1968A8E500F77FB5 /* MyNavigationViewController.m */; };
 		CA086ECF1968CC0800F77FB5 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = CA086ECE1968CC0800F77FB5 /* logo.png */; };
 		CA2A4A3D199FCF3100276BE9 /* libFlurry_5.2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA2A4A3C199FCF3100276BE9 /* libFlurry_5.2.0.a */; };
@@ -117,6 +118,8 @@
 		8CE35EE01BA4D5B500B5D63B /* NSString+Formatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Formatter.m"; sourceTree = "<group>"; };
 		8CE35EE21BA4DE2100B5D63B /* SpinnerFooterReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpinnerFooterReusableView.h; sourceTree = "<group>"; };
 		8CE35EE31BA4DE2100B5D63B /* SpinnerFooterReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpinnerFooterReusableView.m; sourceTree = "<group>"; };
+		8CF234F31BA5989600ABC54D /* GridCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridCollectionViewLayout.h; sourceTree = "<group>"; };
+		8CF234F41BA5989600ABC54D /* GridCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridCollectionViewLayout.m; sourceTree = "<group>"; };
 		CA086ECB1968A8E500F77FB5 /* MyNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavigationViewController.h; sourceTree = "<group>"; };
 		CA086ECC1968A8E500F77FB5 /* MyNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavigationViewController.m; sourceTree = "<group>"; };
 		CA086ECE1968CC0800F77FB5 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
@@ -225,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				8441E12A178A255500C45088 /* Views */,
+				8CF234F21BA5986600ABC54D /* Layout */,
 				CA086ECB1968A8E500F77FB5 /* MyNavigationViewController.h */,
 				CA086ECC1968A8E500F77FB5 /* MyNavigationViewController.m */,
 				CA370BFA199D64DD00AFDACE /* NewVideoTableViewController.h */,
@@ -413,6 +417,15 @@
 				8CE35EE01BA4D5B500B5D63B /* NSString+Formatter.m */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		8CF234F21BA5986600ABC54D /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				8CF234F31BA5989600ABC54D /* GridCollectionViewLayout.h */,
+				8CF234F41BA5989600ABC54D /* GridCollectionViewLayout.m */,
+			);
+			name = Layout;
 			sourceTree = "<group>";
 		};
 		CA2A4A3A199FCF1E00276BE9 /* Flurry */ = {
@@ -625,6 +638,7 @@
 				CA64BE52195C9F020030A555 /* Video.m in Sources */,
 				8CE35EDA1BA4CEE800B5D63B /* VideoCollectionViewController.m in Sources */,
 				CA370BF5199D58F600AFDACE /* ImageHigh.m in Sources */,
+				8CF234F51BA5989600ABC54D /* GridCollectionViewLayout.m in Sources */,
 				CA64BE54195C9F020030A555 /* ContentDetailsVideo.m in Sources */,
 				CA6A3857199EBD4700D176E6 /* LeftSideViewController.m in Sources */,
 				84C280DC178B9B3700455C98 /* HudUtility.m in Sources */,
@@ -726,7 +740,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Xafurdaria/Xafurdaria-Prefix.pch";
 				INFOPLIST_FILE = "Xafurdaria/Xafurdaria-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Xafurdaria";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "103ee9b2-160c-4578-a110-84edc47fb9ec";
@@ -747,7 +761,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Xafurdaria/Xafurdaria-Prefix.pch";
 				INFOPLIST_FILE = "Xafurdaria/Xafurdaria-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",

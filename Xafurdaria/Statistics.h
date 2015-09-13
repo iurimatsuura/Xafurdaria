@@ -11,5 +11,7 @@
 @interface Statistics : NSObject
 
 @property (nonatomic, strong) NSNumber* viewCount;
+@property (nonatomic, strong) NSNumber* likeCount;
+@property (nonatomic, strong) NSNumber* dislikeCount;
 
 @end

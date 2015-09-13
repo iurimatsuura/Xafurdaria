@@ -21,7 +21,7 @@
     [contentMapping addAttributeMappingsFromArray:@[ @"duration"]];
     
     RKObjectMapping* statMapping = [RKObjectMapping mappingForClass:[Statistics class] ];
-    [statMapping addAttributeMappingsFromArray:@[ @"viewCount"]];
+    [statMapping addAttributeMappingsFromArray:@[@"viewCount", @"likeCount", @"dislikeCount"]];
    
     
     // Now configure the Article mapping
