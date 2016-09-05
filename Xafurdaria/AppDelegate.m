@@ -5,7 +5,7 @@
 //  Created by Iuri on 05/07/13.
 //  Copyright (c) 2013 Iuri Mac. All rights reserved.
 //
-//
+//Iuri Sereno
 
 #import "AppDelegate.h"
 
