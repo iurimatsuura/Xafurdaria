@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Iuri Mac. All rights reserved.
 //
 //Iuri Sereno
-//
+//Iuri Sereno
 
 #import "AppDelegate.h"
 
